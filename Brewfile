@@ -12,7 +12,8 @@ brew "tig"
 brew "wget"
 brew "watch"
 
-cast 'google-chrome'
+cask 'google-chrome'
+cask 'vlc'
 cask 'caffeine'
 cask 'flux'
 cask 'alfred'
