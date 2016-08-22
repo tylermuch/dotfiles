@@ -3,7 +3,6 @@
 #	brew bundle
 
 cask_args appdir: '/Applications'
-tap 'caskroom/cask'
 
 brew "hh"
 brew "htop"
@@ -12,7 +11,7 @@ brew "ssh-copy-id"
 brew "tig"
 brew "wget"
 brew "watch"
-brew "vlc"
+brew "Caskroom/cask/vlc"
 
 cask 'google-chrome'
 cask 'caffeine'
