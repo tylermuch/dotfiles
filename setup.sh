@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ "$SHELL" == "/bin/zsh" ]; then
+	chsh -s /bin/zsh $USER
+	echo "Set default shell to zsh. Restart terminal."
+	exit 0
+fi
+
 if [ ! -d /usr/local/Cellar ]; then
 	echo "Installing Homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
