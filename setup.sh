@@ -19,6 +19,7 @@ brew doctor
 echo "Copying dotfiles to ~/"
 cp .bash* ~/
 cp .gitconfig ~/
+cp .zshrc ~/
 
 # Install prezto
 echo "Installing prezto"
