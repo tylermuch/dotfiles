@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$SHELL" == "/bin/zsh" ]; then
+if [ "$SHELL" != "/bin/zsh" ]; then
 	chsh -s /bin/zsh $USER
 	echo "Set default shell to zsh. Restart terminal."
 	exit 0
