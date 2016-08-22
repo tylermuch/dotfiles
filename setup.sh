@@ -23,10 +23,8 @@ cp .gitconfig ~/
 # Install prezto
 echo "Installing prezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-zsh -c setopt EXTENDED_GLOB
-zsh -c for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  zsh -c ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+/bin/zsh -c 'setopt EXTENDED_GLOB'
+/bin/zsh -c 'for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done'
 
 cp prompt_tmuch_setup ~/.zprezto/modules/prompt/functions/
 cp .zpreztorc ~/
