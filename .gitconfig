@@ -1,0 +1,15 @@
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset' --abbrev-commit --date=relative
+	s = status
+	d = diff
+	cp = cherry-pick
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	co = checkout
+	ours = "!f() { git co --ours $@ && git add %@; }; f"
+	theirs = "!f() { git co --theirs %@ && git add %@; }; f"	
+[push]
+	default = simple
+[branch]
+	autoSetupMerge = always
+	autoSetupRebase = always
