@@ -22,7 +22,6 @@ cp .gitconfig ~/
 
 # Install prezto
 echo "Installing prezto"
-zsh
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
@@ -33,11 +32,8 @@ exit
 cp prompt_tmuch_setup ~/.zprezto/modules/prompt/functions/
 cp .zpreztorc ~/
 
-# Set default shell to zsh
-echo "Setting zsh to default shell..."
-chsh -s /bin/zsh $USER
-
 # Install pip
 echo "Installing pip..."
 sudo easy_install pip
 
+echo "Restart terminal"
