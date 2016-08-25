@@ -11,10 +11,10 @@ brew "ssh-copy-id"
 brew "tig"
 brew "wget"
 brew "watch"
-brew "Caskroom/cask/vlc"
 
 cask 'google-chrome'
 cask 'caffeine'
 cask 'flux'
 cask 'alfred'
 cask 'iterm2'
+cask 'vlc'
