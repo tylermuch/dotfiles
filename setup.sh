@@ -20,7 +20,7 @@ echo "Copying dotfiles to ~/"
 cp .bash* ~/
 cp .gitconfig ~/
 cp .zshrc ~/
-
+cp .vimrc ~/
 # Install prezto
 echo "Installing prezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
