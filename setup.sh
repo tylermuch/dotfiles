@@ -13,7 +13,7 @@ fi
 
 
 brew update
-brew bundle # install Brewfile
+brew bundle -v # install Brewfile
 brew doctor
 
 echo "Copying dotfiles to ~/"
