@@ -11,6 +11,7 @@ brew "ssh-copy-id"
 brew "tig"
 brew "wget"
 brew "watch"
+brew "ctags"
 
 cask 'google-chrome'
 cask 'caffeine'

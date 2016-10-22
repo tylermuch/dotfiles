@@ -18,6 +18,8 @@ if [ -f ~/.secrets ]; then
 	source ~/.secrets
 fi
 
+alias ctags="`brew --prefix`/bin/ctags"
+
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
