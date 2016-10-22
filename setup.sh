@@ -34,4 +34,5 @@ cp .zpreztorc ~/
 echo "Installing pip..."
 sudo easy_install pip
 
+echo "Remember to disable mission control shortcuts"
 echo "Restart terminal"
