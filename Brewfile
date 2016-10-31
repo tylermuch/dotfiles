@@ -12,6 +12,7 @@ brew "tig"
 brew "wget"
 brew "watch"
 brew "ctags"
+brew "the_silver_searcher"
 
 cask 'google-chrome'
 cask 'caffeine'
