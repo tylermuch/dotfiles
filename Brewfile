@@ -13,6 +13,7 @@ brew "wget"
 brew "watch"
 brew "ctags"
 brew "the_silver_searcher"
+brew "tree"
 
 cask 'google-chrome'
 cask 'caffeine'
