@@ -14,6 +14,7 @@ brew "watch"
 brew "ctags"
 brew "the_silver_searcher"
 brew "tree"
+brew "fzf"
 
 cask 'google-chrome'
 cask 'caffeine'
