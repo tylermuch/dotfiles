@@ -19,6 +19,11 @@ if [ -f ~/.secrets ]; then
 fi
 
 alias ctags="`brew --prefix`/bin/ctags"
+alias ff="fzf | pbcopy"
+
+vi() {
+    vim $(fzf)
+}
 
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[default]=none
@@ -41,7 +46,3 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
 ZSH_HIGHLIGHT_STYLES[assign]=none
-
-bindkey -e
-bindkey '^[[1;5D' forward-word
-bindkey '^[[1;5C' backward-word
