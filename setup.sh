@@ -32,6 +32,11 @@ cp .zpreztorc ~/
 
 # Install pip
 echo "Installing pip..."
+if hash pip 2>/dev/null; then
+	echo "pip already installed, exiting..."
+	exit
+fi
+
 sudo easy_install pip
 
 echo "Remember to disable mission control shortcuts"
