@@ -20,6 +20,7 @@ fi
 
 alias ctags="`brew --prefix`/bin/ctags"
 alias ff="fzf | pbcopy"
+alias wget="wget --user tmuch --ask-password"
 
 vi() {
     vim $(fzf)
