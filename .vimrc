@@ -155,8 +155,10 @@ nmap <F8> :TagbarToggle<CR>
 set runtimepath^=~/.vim/bundle/cscope_maps.vim
 source ~/.vim/bundle/cscope_maps.vim/cscope_maps.vim
 
+set tabstop=4
 set scrolloff=10
 colorscheme jellybeans
 
+autocmd VimEnter * TagbarToggle " Launch Tagbar
 autocmd VimEnter * NERDTree	" Launch NERDTree
 autocmd VimEnter * wincmd p	" Set cursor to main window instead of NERDTree
