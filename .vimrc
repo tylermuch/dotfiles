@@ -160,6 +160,7 @@ source ~/.vim/bundle/cscope_maps.vim/cscope_maps.vim
 set tabstop=4
 set scrolloff=10
 colorscheme jellybeans
+set noundofile
 
 autocmd VimEnter * TagbarToggle " Launch Tagbar
 autocmd VimEnter * NERDTree	" Launch NERDTree
