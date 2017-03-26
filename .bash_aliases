@@ -1,6 +1,8 @@
-alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
+platform=$(uname)
 
-alias pull='find "$(pwd)" -type d -depth 1 | xargs -I {} bash -c "if git -C {} rev-parse ; then echo \"Pulling {}\" ; git -C {} pull --rebase &> /dev/null ; fi"'
+if [[ $platform == 'Darwin' ]]; then
+	alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
+fi
 
 twitch() {
 	if ! hash livestreamer 2>/dev/null; then

@@ -18,14 +18,6 @@ if [ -f ~/.secrets ]; then
 	source ~/.secrets
 fi
 
-alias ctags="`brew --prefix`/bin/ctags"
-alias ff="fzf | pbcopy"
-alias wget="wget --user tmuch --ask-password"
-
-vi() {
-    vim $(fzf)
-}
-
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
