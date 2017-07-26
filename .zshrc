@@ -8,7 +8,6 @@ unsetopt correct
 export PATH=$PATH:$HOME/bin
 export GIT_EDITOR='vim'
 export EDITOR='vim'
-export LSCOLORS="axfxcxdxbxegedabagacad"
 
 if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
@@ -17,6 +16,27 @@ fi
 if [ -f ~/.secrets ]; then
 	source ~/.secrets
 fi
+
+alias ctags="`brew --prefix`/bin/ctags"
+alias ls="ls -G"
+
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxbxegedabagaced
+
+ff() {
+	FILE=`fzf $@`
+	if [[ -e $FILE ]]; then
+		echo $FILE
+		echo -n $FILE | pbcopy
+	fi
+}
+
+fzfz() {
+	FILE=`fzf $@`
+	if [[ -e $FILE ]]; then
+		code "$FILE" && echo $_
+	fi
+}
 
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[default]=none
@@ -39,3 +59,10 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
 ZSH_HIGHLIGHT_STYLES[assign]=none
+
+bindkey -e
+bindkey '^[[1;5D' forward-word
+bindkey '^[[1;5C' backward-word
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
