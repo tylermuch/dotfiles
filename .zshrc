@@ -1,11 +1,28 @@
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-unsetopt correct
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-export PATH=$PATH:$HOME/bin
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="tmuch"
+
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="true"
+DISABLE_LS_COLORS="false"
+DISABLE_AUTO_TITLE="false"
+COMPLETION_WAITING_DOTS="false"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git tmux)
+
+source $ZSH/oh-my-zsh.sh
+
 export GIT_EDITOR='vim'
 export EDITOR='vim'
 
@@ -18,10 +35,7 @@ if [ -f ~/.secrets ]; then
 fi
 
 alias ctags="`brew --prefix`/bin/ctags"
-alias ls="ls -G"
-
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxbxegedabagaced
+alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
 
 ff() {
 	FILE=`fzf $@`
@@ -31,31 +45,4 @@ ff() {
 	fi
 }
 
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[default]=none
-ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=green
-ZSH_HIGHLIGHT_STYLES[alias]=none
-ZSH_HIGHLIGHT_STYLES[builtin]=none
-ZSH_HIGHLIGHT_STYLES[function]=none
-ZSH_HIGHLIGHT_STYLES[command]=none
-ZSH_HIGHLIGHT_STYLES[precommand]=none
-ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-ZSH_HIGHLIGHT_STYLES[hashed-command]=none
-ZSH_HIGHLIGHT_STYLES[globbing]=none
-ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=yellow
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=yellow
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=cyan
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=cyan
-ZSH_HIGHLIGHT_STYLES[assign]=none
-
-bindkey -e
-bindkey '^[[1;5D' forward-word
-bindkey '^[[1;5C' backward-word
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-

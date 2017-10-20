@@ -3,17 +3,6 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 platform=`uname`
 
-if [[ $platform == "Darwin" && "$SHELL" != "/bin/zsh" ]]; then
-	chsh -s /bin/zsh $USER
-	echo "Set default shell to zsh. Restart terminal."
-	exit 0
-elif [[ $platform == "Linux" && "$SHELL" != "/bin/zsh" ]]; then
-	sudo apt-get install zsh
-	chsh -s /bin/zsh $USER
-	echo "Set default shell to zsh. Restart terminal."
-	exit 0
-fi
-
 if [[ $platform == 'Darwin' ]]; then
 	if [ ! -d /usr/local/Cellar ]; then
 		echo "Installing Homebrew"
@@ -25,19 +14,28 @@ if [[ $platform == 'Darwin' ]]; then
 	brew doctor
 fi
 
+if [[ $platform == "Darwin" && "$SHELL" != "/usr/local/bin/zsh" ]]; then
+	chsh -s /usr/local/bin/zsh $USER
+	echo "Set default shell to zsh. Restart terminal."
+	exit 0
+elif [[ $platform == "Linux" && "$SHELL" != "/bin/zsh" ]]; then
+	sudo apt-get install zsh
+	chsh -s /bin/zsh $USER
+	echo "Set default shell to zsh. Restart terminal."
+	exit 0
+fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 echo "Copying dotfiles to ~/"
 cp .bash* ~/
 cp .gitconfig ~/
+
+cp ~/.zshrc ~/.zshrc_oh_my_zsh
 cp .zshrc ~/
 
-
-echo "Installing prezto"
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-/bin/zsh -c 'setopt EXTENDED_GLOB'
-/bin/zsh -c 'for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done'
-
-cp prompt_tmuch_setup ~/.zprezto/modules/prompt/functions/
-cp .zpreztorc ~/
+mkdir $ZSH_CUSTOM/themes
+cp tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
 
 # Install pip
 echo "Installing pip..."
@@ -46,14 +44,6 @@ if hash pip 2>/dev/null; then
 	exit
 else
 	python get-pip.py
-fi
-
-echo "Install ctags..."
-if [[ $platform == 'Darwin' ]]; then
-	brew install ctags
-	echo "alias ctags=\"`brew --prefix`/bin/ctags\"" >> ~/.bash_aliases
-elif [[ $platform == 'Linux' ]]; then
-	sudo apt-get install exuberant-ctags cscope
 fi
 
 echo "Installing Vim bundles..."
