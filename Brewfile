@@ -15,10 +15,10 @@ brew "ctags"
 brew "the_silver_searcher"
 brew "tree"
 brew "fzf"
+brew "zsh"
+brew "tmux"
 
-cask 'google-chrome'
 cask 'caffeine'
 cask 'flux'
 cask 'alfred'
 cask 'iterm2'
-cask 'vlc'

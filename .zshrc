@@ -31,13 +31,6 @@ ff() {
 	fi
 }
 
-fzfz() {
-	FILE=`fzf $@`
-	if [[ -e $FILE ]]; then
-		code "$FILE" && echo $_
-	fi
-}
-
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[default]=none
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,bold
