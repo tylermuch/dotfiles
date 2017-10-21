@@ -1,2 +1,2 @@
-PROMPT='%{$fg[green]%}%~
+PROMPT='%F{119}%~
 » %{$reset_color%}'
