@@ -167,8 +167,6 @@ colorscheme jellybeans
 set noundofile
 
 autocmd VimEnter * TagbarToggle " Launch Tagbar
-autocmd VimEnter * NERDTree	" Launch NERDTree
-autocmd VimEnter * wincmd p	" Set cursor to main window instead of NERDTree
 
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
