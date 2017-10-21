@@ -45,6 +45,8 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'junegunn/fzf.vim'
 
+Plugin 'mileszs/ack.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -170,3 +172,7 @@ autocmd VimEnter * wincmd p	" Set cursor to main window instead of NERDTree
 
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
