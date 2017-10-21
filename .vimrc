@@ -170,6 +170,8 @@ autocmd VimEnter * TagbarToggle " Launch Tagbar
 
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
+nmap \f :Ack! 
+nmap \q :cclose<CR>
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
