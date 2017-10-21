@@ -161,16 +161,18 @@ nmap <F8> :TagbarToggle<CR>
 set runtimepath^=~/.vim/bundle/cscope_maps.vim
 source ~/.vim/bundle/cscope_maps/plugin/cscope_maps.vim
 
-set tabstop=4
 set scrolloff=10
 colorscheme jellybeans
 set noundofile
 
 autocmd VimEnter * TagbarToggle " Launch Tagbar
+autocmd BufEnter * source ~/.vimhighlight
+
+set tabstop=4 shiftwidth=4 expandtab
 
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
-nmap \f :Ack! 
+nmap f :Ack! 
 nmap \q :cclose<CR>
 
 if executable('ag')
