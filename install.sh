@@ -3,6 +3,9 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 platform=`uname`
 
+#
+#   Install Homebrew
+#
 if [[ $platform == 'Darwin' ]]; then
 	if [ ! -d /usr/local/Cellar ]; then
 		echo "Installing Homebrew"
@@ -14,7 +17,11 @@ if [[ $platform == 'Darwin' ]]; then
 	brew doctor
 fi
 
+#
+#   Set zsh as default shell
+#
 if [[ $platform == "Darwin" && "$SHELL" != "/usr/local/bin/zsh" ]]; then
+    sudo vim /etc/shells
 	chsh -s /usr/local/bin/zsh $USER
 	echo "Set default shell to zsh. Restart terminal."
 	exit 0
@@ -25,20 +32,22 @@ elif [[ $platform == "Linux" && "$SHELL" != "/bin/zsh" ]]; then
 	exit 0
 fi
 
+#
+# Install oh-my-zsh
+#
+ZSH_CUSTOM=$HOME/.oh-my-zsh/themes
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "Copying dotfiles to ~/"
-cp .bash* ~/
+#
+# Copy dotfiles to $HOME
+#
 cp .gitconfig ~/
-
-cp ~/.zshrc ~/.zshrc_oh_my_zsh
 cp .zshrc ~/
-
-mkdir $ZSH_CUSTOM/themes
 cp tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
 
+#
 # Install pip
-echo "Installing pip..."
+#
 if hash pip 2>/dev/null; then
 	echo "pip already installed, exiting..."
 	exit
@@ -46,7 +55,9 @@ else
 	python get-pip.py
 fi
 
-echo "Installing Vim bundles..."
+#
+#   Install Vundle plugins
+#
 if [ -d "$DIR/.vim/bundle/Vundle.vim" ]; then
 	cp -R "$DIR/.vim" ~/
 	cp "$DIR/.vimrc" ~/
