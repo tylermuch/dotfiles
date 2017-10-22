@@ -37,7 +37,7 @@ fi
 alias ctags="`brew --prefix`/bin/ctags"
 alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
 alias gitp='git --no-pager'
-alias diff='colordiff'
+alias diff='cdiff'
 
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
