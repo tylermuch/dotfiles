@@ -1,33 +1,25 @@
 #!/bin/bash
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-platform=`uname`
 
 #
 #   Install Homebrew
 #
-if [[ $platform == 'Darwin' ]]; then
-	if [ ! -d /usr/local/Cellar ]; then
-		echo "Installing Homebrew"
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	fi
-
-	brew update
-	brew bundle -v # install Brewfile
-	brew doctor
+if [ ! -d /usr/local/Cellar ]; then
+	echo "Installing Homebrew"
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+brew update
+brew bundle -v # install Brewfile
+brew doctor
 
 #
 #   Set zsh as default shell
 #
-if [[ $platform == "Darwin" && "$SHELL" != "/usr/local/bin/zsh" ]]; then
+if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
     sudo vim /etc/shells
 	chsh -s /usr/local/bin/zsh $USER
-	echo "Set default shell to zsh. Restart terminal."
-	exit 0
-elif [[ $platform == "Linux" && "$SHELL" != "/bin/zsh" ]]; then
-	sudo apt-get install zsh
-	chsh -s /bin/zsh $USER
 	echo "Set default shell to zsh. Restart terminal."
 	exit 0
 fi
@@ -67,5 +59,7 @@ else
 	echo "Vundle plugin bundle not found in repo."
 	echo "Run: git submodule update --init --recursive"
 fi
+
+defaults write NSGlobalDomain KeyRepeat -int 1
 
 echo "Restart terminal"
