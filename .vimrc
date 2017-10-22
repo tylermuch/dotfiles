@@ -47,6 +47,12 @@ Plugin 'junegunn/fzf.vim'
 
 Plugin 'mileszs/ack.vim'
 
+Plugin 'sheerun/vim-polyglot'
+
+Plugin 'tpope/vim-commentary'
+
+Plugin 'vim-airline/vim-airline-themes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -161,20 +167,20 @@ nmap <F8> :TagbarToggle<CR>
 set runtimepath^=~/.vim/bundle/cscope_maps.vim
 source ~/.vim/bundle/cscope_maps/plugin/cscope_maps.vim
 
+set tabstop=4
 set scrolloff=10
 colorscheme jellybeans
 set noundofile
 
 autocmd VimEnter * TagbarToggle " Launch Tagbar
-autocmd BufEnter * source ~/.vimhighlight
-
-set tabstop=4 shiftwidth=4 expandtab
 
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
-nmap f :Ack! 
+nmap \f :Ack! 
 nmap \q :cclose<CR>
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+let g:airline_theme='base16_bright'
