@@ -1,70 +1,105 @@
-#!/bin/bash
+basedir=$HOME/.dotfiles
+bindir=$HOME/bin
+repourl=https://github.com/tylermuch/dotfiles
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+set -e
 
+function symlink() {
+	src=$1
+	dest=$2
+
+	if [ -e $dest ]; then
+		if [ -L $dest ]; then
+			# Already symlinked -- I'll assume correctly
+			return
+		else
+			# Rename files with a ".old" extension
+			echo "$dest already exists, renaming to $dest.old"
+			backup=$dest.old
+			if [ -e $backup ]; then
+				echo "Error: $backup already exists. Please delete or rename it."
+				exit 1
+			fi
+			mv -v $dest $backup
+		fi
+	fi
+
+	ln -sf $src $dest
+}
+
+if ! which git >/dev/null ; then
+	echo "Error: git is not installed"
+	exit 1
+fi
+
+echo "Updating dotfiles..."
+if [ -d $basedir/.git ]; then
+	echo "Updating dotfiles using existing git.."
+	#git -C $basedir pull --quiet --rebase origin master
+else
+	echo "Checking out dotfiles using git..."
+	rm -rf $basedir
+	git clone --quiet --depth=1 $repourl $basedir
+fi
+
+#	oh-my-zsh will install its own ~/.zshrc
+#	so we need to install it before we symlink our dotfiles
 #
-#   Install Homebrew
-#
+echo "Installing oh-my-zsh..."
+if [ ! -d $HOME/.oh-my-zsh ]; then
+	ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	mkdir $ZSH_CUSTOM/themes
+	symlink $basedir/.oh-my-zsh/tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
+fi
+
+echo "Creating symlinks..."
+cd $basedir
+for path in .* ; do
+	case $path in
+		.|..|.git*|.oh-my-zsh)
+			continue
+			;;
+		*)
+			symlink $basedir/$path $HOME/$path
+			;;
+	esac
+done
+
+symlink $basedir/.vim/vimrc $HOME/.vimrc
+
+echo "Setting up Git..."
+symlink $basedir/.gitconfig.base $HOME/.gitconfig
+
+echo "Installing Homebrew modules..."
 if [ ! -d /usr/local/Cellar ]; then
-	echo "Installing Homebrew"
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+#set -e
 brew update
-brew bundle -v # install Brewfile
+brew bundle -v # Install Brewfile
+set +e
 brew doctor
+set -e
+#set +e
 
-#
-#   Set zsh as default shell
-#
-if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
-    sudo vim /etc/shells
-	chsh -s /usr/local/bin/zsh $USER
-	echo "Set default shell to zsh. Restart terminal."
-	exit 0
+echo "Installing Vim plugins..."
+$basedir/.vim/update.sh
+
+echo "Install tmux plugins..."
+if [ ! -d $HOME/.tmux/plugins/tpm ]; then
+	mkdir -p $HOME/.tmux/plugins
+	git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
 
-#
-# Install oh-my-zsh
-#
-ZSH_CUSTOM=$HOME/.oh-my-zsh/themes
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "Setting zsh as default shell..."
+echo "Add /usr/local/bin/zsh to /etc/shells (Press enter to continue)"
+read
+sudo vim /etc/shells
+chsh -s /usr/local/bin/zsh $USER
 
-#
-# Copy dotfiles to $HOME
-#
-cp .gitconfig ~/
-cp .zshrc ~/
-cp tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
+# Various other settings
+defaults write NSGlobalDomain KeyRepeat -int 1 # Faster key repeat than is allowed from System Preferences
 
-#
-# Install pip
-#
-if hash pip 2>/dev/null; then
-	echo "pip already installed, exiting..."
-	exit
-else
-	python get-pip.py
-fi
-
-#
-#   Install Vundle plugins
-#
-if [ -d "$DIR/.vim/bundle/Vundle.vim" ]; then
-	cp -R "$DIR/.vim" ~/
-	cp "$DIR/.vimrc" ~/
-	vim -c 'PluginInstall' -c 'qa!'
-	#ln -s ~/.vim/bundle/cscope_maps/plugin ~/.vim/bundle/cscope_maps.vim
-else
-	echo "Vundle plugin bundle not found in repo."
-	echo "Run: git submodule update --init --recursive"
-fi
-
-
-defaults write NSGlobalDomain KeyRepeat -int 1
-
-mkdir -p ~/.tmux/plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo "Execute prefix+I in tmux to install tmux plugins"
-
-echo "Restart terminal"
+echo "Installation complete!"
