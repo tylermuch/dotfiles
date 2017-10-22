@@ -18,6 +18,7 @@ brew "fzf"
 brew "zsh"
 brew "tmux"
 brew "ansifilter" # for tmux-logging plugin
+brew "colordiff"
 
 cask 'caffeine'
 cask 'flux'
