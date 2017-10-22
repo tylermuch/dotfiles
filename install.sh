@@ -92,7 +92,9 @@ if [ ! -d $HOME/.tmux/plugins/tpm ]; then
 fi
 
 echo "Setting zsh as default shell..."
-echo "Add /usr/local/bin/zsh to /etc/shells (Press enter to continue)"
+echo "Add /usr/local/bin/zsh to /etc/shells"
+echo "(Press enter to continue)"
+echo "sudo vim /etc/shells"
 read
 sudo vim /etc/shells
 chsh -s /usr/local/bin/zsh $USER
