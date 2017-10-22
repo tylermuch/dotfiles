@@ -76,13 +76,11 @@ if [ ! -d /usr/local/Cellar ]; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-#set -e
 brew update
 brew bundle -v # Install Brewfile
 set +e
 brew doctor
 set -e
-#set +e
 
 echo "Installing Vim plugins..."
 $basedir/.vim/update.sh
