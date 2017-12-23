@@ -51,4 +51,5 @@ ff() {
 	fi
 }
 
+set rtp+=/usr/local/opt/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

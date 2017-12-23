@@ -56,6 +56,13 @@ set scrolloff=10
 " annoying.
 set noundofile
 
+" Highlight the line the cursor is on
+set cursorline
+
+" Replace tabs with '>---' and trailing whitespace with '·'
+set listchars=tab:>-,trail:·
+set list
+
 " fzf in vim!
 set rtp+=/usr/local/opt/fzf
 nmap ; :Files<CR>
