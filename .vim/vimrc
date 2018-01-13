@@ -9,24 +9,24 @@ execute pathogen#infect()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50  " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
+set showcmd     " display incomplete commands
+set incsearch   " do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
-	set mouse=a
+  set mouse=a
 endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
+  syntax on
+  set hlsearch
 endif
 
 " Enable file type detection.
@@ -85,15 +85,15 @@ colorscheme jellybeans
 
 " Put these in an autocmd group, so that we can delete them easily.
 augroup vimrcEx
-	au!
+  au!
 
-	" When editing a file, always jump to the last known cursor position.
-	" Don't do it when the position is invalid or when inside an event handler
-	" (happens when dropping a file on gvim).
-	autocmd BufReadPost *
-				\ if line("'\"") >= 1 && line("'\"") <= line("$") |
-				\   exe "normal! g`\"" |
-				\ endif
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+        \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
 
     autocmd VimEnter * TagbarToggle " Launch tagbar
 augroup END

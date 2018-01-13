@@ -1,6 +1,6 @@
 # To install:
-#	brew tap homebrew/bundle
-#	brew bundle
+#   brew tap homebrew/bundle
+#   brew bundle
 
 cask_args appdir: '/Applications'
 
