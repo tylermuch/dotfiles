@@ -39,6 +39,7 @@ filetype plugin indent on
 set number
 
 nmap <F8> :TagbarToggle<CR>
+nmap <F9> :set list!<CR>
 
 set runtimepath^=~/.vim/bundle/cscope_maps.vim
 source ~/.vim/bundle/cscope_maps/plugin/cscope_maps.vim
