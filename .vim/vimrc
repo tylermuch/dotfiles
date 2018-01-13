@@ -98,3 +98,6 @@ augroup vimrcEx
     autocmd VimEnter * TagbarToggle " Launch tagbar
 augroup END
 
+" Display >--- for tabs
+set listchars=tab:>-
+set list
