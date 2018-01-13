@@ -43,6 +43,8 @@ LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
 export LESS=' -R -X -F '
 
+export PATH=$PATH:$USER/bin
+
 ff() {
 	FILE=`fzf $@`
 	if [[ -e $FILE ]]; then
