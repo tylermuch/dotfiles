@@ -12,8 +12,12 @@ ZSH_THEME="tmuch"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 DISABLE_LS_COLORS="false"
-DISABLE_AUTO_TITLE="false"
 COMPLETION_WAITING_DOTS="false"
+
+# If this is false, tmux windows will be automatically renamed as well
+# This ends up overriding the expected behavior of the -n flag to tmux new-window
+# tmux new-window -n <window name>
+DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
