@@ -27,11 +27,11 @@ export GIT_EDITOR='vim'
 export EDITOR='vim'
 
 if [ -f ~/.bash_aliases ]; then
-	source ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 if [ -f ~/.secrets ]; then
-	source ~/.secrets
+    source ~/.secrets
 fi
 
 alias ctags="`brew --prefix`/bin/ctags"
@@ -46,11 +46,11 @@ export LESS=' -R -X -F '
 export PATH=$PATH:$USER/bin
 
 ff() {
-	FILE=`fzf $@`
-	if [[ -e $FILE ]]; then
-		echo $FILE
-		echo -n $FILE | pbcopy
-	fi
+    FILE=`fzf $@`
+    if [[ -e $FILE ]]; then
+        echo $FILE
+        echo -n $FILE | pbcopy
+    fi
 }
 
 set rtp+=/usr/local/opt/fzf
