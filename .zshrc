@@ -34,6 +34,10 @@ if [ -f ~/.secrets ]; then
     source ~/.secrets
 fi
 
+if [ -f ~/.bash_tmux ]; then
+    source ~/.bash_tmux
+fi
+
 alias ctags="`brew --prefix`/bin/ctags"
 alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
 alias gitp='git --no-pager'
