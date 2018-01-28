@@ -9,24 +9,14 @@ export PATH=$PATH:$USER/bin
 alias mkdir='mkdir -pv'
 alias l='ls -FGlAhp'
 alias less='less -FSRXc'
-alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
 alias gitp='git --no-pager'
 alias diff='colordiff'
 
 ################################################
-# Editors
+# Misc.
 ################################################
 export GIT_EDITOR='vim'
 export EDITOR='vim'
-alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-
-################################################
-# Misc.
-################################################
-LESSPIPE=`which src-hilite-lesspipe.sh`
-export LESSOPEN="| ${LESSPIPE} %s"
-export LESS=' -R -X -F '
-
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
@@ -35,7 +25,8 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 ################################################
 if [[ $(uname) == "Darwin" ]]; then
     alias ctags="`brew --prefix`/bin/ctags"
-    
+    alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
+    alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
     ff() {
         FILE=`fzf $@`
         if [[ -e $FILE ]]; then
