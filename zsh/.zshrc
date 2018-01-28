@@ -27,3 +27,7 @@ plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
+###########################
+# Source .bashrc
+###########################
+source ~/.bashrc
