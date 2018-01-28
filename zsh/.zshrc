@@ -34,7 +34,9 @@ if [ -f ~/.secrets ]; then
     source ~/.secrets
 fi
 
-alias ctags="`brew --prefix`/bin/ctags"
+if [[ $(uname) == "Darwin" ]]; then
+    alias ctags="`brew --prefix`/bin/ctags"
+fi
 alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
 alias gitp='git --no-pager'
 alias diff='colordiff'
