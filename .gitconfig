@@ -19,5 +19,3 @@
 [branch]
     autoSetupMerge = always
     autoSetupRebase = always
-[user]
-    name = Tyler Much
