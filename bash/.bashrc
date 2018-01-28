@@ -68,9 +68,9 @@ to() {
 
 
 ################################################
-# bash secrets
+# secrets
 ################################################
-if [ -f ~/.bash_secrets ]; then
-    . ~/.bash_secrets
+if [ -f ~/.secrets ]; then
+    . ~/.secrets
 fi
 
