@@ -6,7 +6,13 @@ source ~/.bash_profile
 ###########################
 # Prompt
 ###########################
-PS1='%F{119}%~
+__ssh_hostname_prompt(){
+    if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+        echo "($(hostname)) "
+    fi
+}
+
+PS1='%F{119}$(__ssh_hostname_prompt)%~
 » %F{reset}'
 
 ###########################
