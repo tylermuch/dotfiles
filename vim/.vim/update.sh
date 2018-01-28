@@ -36,7 +36,6 @@ for repo in ${repos[@]}; do
 
     plugin="$(basename $repo | sed -e 's/\.git$//')"
     dest="$dir/$plugin"
-    rm -rf $dest
     (
         git clone --depth=1 -q https://github.com/$repo $dest
         rm -rf $dest/.git
