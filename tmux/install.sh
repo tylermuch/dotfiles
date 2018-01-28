@@ -21,5 +21,5 @@ if [ ! -d $HOME/.tmux/plugins/tpm ]; then
     echo "prefix + I in tmux to install plugins"
 fi
 
-ln -sf $DIR/.tmux.conf $HOME/.tmux.conf
+ln -sf $DIR/tmux.conf $HOME/.tmux.conf
 

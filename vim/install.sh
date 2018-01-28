@@ -13,7 +13,7 @@ else
     exit 1
 fi
 
-ln -sf $DIR/.vim/vimrc $HOME/.vimrc
+ln -sf $DIR/vimrc $HOME/.vimrc
 
-$DIR/.vim/update.sh
+$DIR/update.sh
 

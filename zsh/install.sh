@@ -33,7 +33,7 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     mkdir $ZSH_CUSTOM/themes
-    ln -sf $DIR/.oh-my-zsh/tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
+    ln -sf $DIR/oh-my-zsh/tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
 fi
 
-ln -sf $DIR/.zshrc $HOME/.zshrc
+ln -sf $DIR/zshrc $HOME/.zshrc
