@@ -25,9 +25,9 @@ DISABLE_AUTO_TITLE="true"
 #source $ZSH/oh-my-zsh.sh
 
 ###########################
-# Source .bashrc
+# Source .bash_profile
 ###########################
-source ~/.bashrc
+source ~/.bash_profile
 
 # Prompt
 PS1='%F{119}%~

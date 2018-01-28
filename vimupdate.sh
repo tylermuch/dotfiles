@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 repos=(
     gnattishness/cscope_maps
     tpope/vim-fugitive
@@ -19,6 +21,7 @@ repos=(
 set -e
 dir=$HOME/.vim/bundle
 
+# back up old bundle directory
 if [ -d $dir -a -z "$1" ]; then
     temp="$(mktemp -d -t bundleXXXX)"
     echo "Moving old bundle dir to $temp"
