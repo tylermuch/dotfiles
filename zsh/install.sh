@@ -12,14 +12,12 @@ else
     echo "I don't know how to install zsh"
 fi
 
-if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
+ZSH_EXPECTED_DIR=$(command -v zsh)
+if [[ "$SHELL" != "$ZSH_EXPECTED_DIR" ]]; then
     echo "Setting zsh as default shell..."
-    echo "Add /usr/local/bin/zsh to /etc/shells"
-    echo "(Press enter to continue)"
-    echo "sudo vim /etc/shells"
-    read
-    sudo vim /etc/shells
-    chsh -s /usr/local/bin/zsh $USER
+    echo "Adding $ZSH_EXPECTED_DIR to /etc/shells"
+    echo "$ZSH_EXPECTED_DIR" | sudo tee -a /etc/shells
+    chsh -s "$ZSH_EXPECTED_DIR" "$USER"
 fi
 
 #    oh-my-zsh will install its own ~/.zshrc
@@ -28,9 +26,14 @@ fi
 echo "Installing oh-my-zsh..."
 if [ ! -d $HOME/.oh-my-zsh ]; then
     ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+
+    if [[ $(uname) == "Linux" ]]; then
+        sudo apt-get install curl
+    fi
+
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     mkdir $ZSH_CUSTOM/themes
-    symlink $DIR/.oh-my-zsh/tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
+    ln -sf $DIR/.oh-my-zsh/tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
 fi
 
 ln -sf $DIR/.zshrc $HOME/.zshrc

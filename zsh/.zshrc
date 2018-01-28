@@ -30,16 +30,8 @@ source $ZSH/oh-my-zsh.sh
 export GIT_EDITOR='vim'
 export EDITOR='vim'
 
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
 if [ -f ~/.secrets ]; then
     source ~/.secrets
-fi
-
-if [ -f ~/.bash_tmux ]; then
-    source ~/.bash_tmux
 fi
 
 alias ctags="`brew --prefix`/bin/ctags"
