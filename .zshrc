@@ -15,6 +15,9 @@ ssh_hostname(){
 PS1='%F{119}$(ssh_hostname)%~
 » %F{reset}'
 
+###########################
+# Other settings
+###########################
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
