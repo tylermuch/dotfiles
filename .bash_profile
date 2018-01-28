@@ -27,6 +27,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias ctags="`brew --prefix`/bin/ctags"
     alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
     alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+    
     ff() {
         FILE=`fzf $@`
         if [[ -e $FILE ]]; then

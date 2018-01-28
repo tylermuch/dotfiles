@@ -1,4 +1,3 @@
-
 set nocompatible              " be iMproved
 filetype off                  " turn off until plugins are loaded
 
@@ -38,11 +37,7 @@ filetype plugin indent on
 " Line numbers
 set number
 
-nmap <F8> :TagbarToggle<CR>
-nmap <F9> :set list!<CR>
-
 set runtimepath^=~/.vim/bundle/cscope_maps
-" source ~/.vim/bundle/cscope_maps/plugin/cscope_maps.vim
 
 " Spaces > Tabs
 set tabstop=4
@@ -62,15 +57,11 @@ set cursorline
 
 " fzf in vim!
 set rtp+=/usr/local/opt/fzf
-nmap ; :Files<CR>
-nmap \f :Ack! 
 
 " Tell ack.vim to use ag instead of ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-
-let g:airline_theme='base16_bright'
 
 " GitGutter styling to use · instead of +/-
 let g:gitgutter_sign_added = '∙'
@@ -78,23 +69,17 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
+" Theme settings
 colorscheme jellybeans
-
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  au!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-        \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
-
-    autocmd VimEnter * TagbarToggle " Launch tagbar
-augroup END
+let g:airline_theme='base16_bright'
 
 " Display >--- for tabs
 set listchars=tab:>-
 set list
+
+" Keybindings
+nmap <F8> :TagbarToggle<CR>
+nmap <F9> :set list!<CR>
+nmap ; :Files<CR>
+nmap \f :Ack! 
+
