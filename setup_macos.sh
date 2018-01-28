@@ -19,3 +19,15 @@ $DIR/vimupdate.sh
 
 echo "Symlinking dotfiles..."
 $DIR/symlink.sh
+
+echo "Setting macOS user defaults..."
+defaults write com.apple.finder ShowPathBar -bool true
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+# Key repeat
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Disable press-and-hold in favor of key-repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
