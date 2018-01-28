@@ -31,12 +31,27 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 ################################################
-# macOS .bashrc
+# macOS specific stuff
 ################################################
 if [[ $(uname) == "Darwin" ]]; then
-    if [ -f ~/.bashrc_macos ]; then
-        source ~/.bashrc_macos
+    alias ctags="`brew --prefix`/bin/ctags"
+    
+    ff() {
+        FILE=`fzf $@`
+        if [[ -e $FILE ]]; then
+            echo $FILE
+            echo -n $FILE | pbcopy
+        fi
+    }
+
+    if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+        export PATH="$PATH:/usr/local/opt/fzf/bin"
+        set rtp+=/usr/local/opt/fzf
     fi
+
+    [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+    source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi    
 
 ################################################
