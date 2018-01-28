@@ -1,25 +1,34 @@
 ################################################
-# Misc.
+# PATH
 ################################################
-export GIT_EDITOR='vim'
-export EDITOR='vim'
+export PATH=$PATH:$USER/bin
 
+################################################
+# Aliases
+################################################
+alias mkdir='mkdir -pv'
+alias l='ls -FGlAhp'
+alias less='less -FSRXc'
 alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
 alias gitp='git --no-pager'
 alias diff='colordiff'
 
+################################################
+# Editors
+################################################
+export GIT_EDITOR='vim'
+export EDITOR='vim'
+alias subl="/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+
+################################################
+# Misc.
+################################################
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
 export LESS=' -R -X -F '
 
-export PATH=$PATH:$USER/bin
-
-################################################
-# secrets
-################################################
-if [ -f ~/.secrets ]; then
-    . ~/.secrets
-fi
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
 ################################################
 # macOS .bashrc
@@ -90,4 +99,11 @@ to() {
         tmux attach -t dev
     fi
 }
+
+################################################
+# secrets
+################################################
+if [ -f ~/.secrets ]; then
+    . ~/.secrets
+fi
 
