@@ -74,13 +74,12 @@ symlink $basedir/.gitconfig.base $HOME/.gitconfig
 echo "Installing Homebrew modules..."
 if [ ! -d /usr/local/Cellar ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    set +e
+    brew update
+    brew bundle -v # Install Brewfile
+    brew doctor
+    set -e
 fi
-
-set +e
-brew update
-brew bundle -v # Install Brewfile
-brew doctor
-set -e
 
 echo "Installing Vim plugins..."
 $basedir/.vim/update.sh
@@ -91,13 +90,15 @@ if [ ! -d $HOME/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
 
-echo "Setting zsh as default shell..."
-echo "Add /usr/local/bin/zsh to /etc/shells"
-echo "(Press enter to continue)"
-echo "sudo vim /etc/shells"
-read
-sudo vim /etc/shells
-chsh -s /usr/local/bin/zsh $USER
+if [[ "$SHELL" != "/usr/local/bin/zsh" ]]; then
+    echo "Setting zsh as default shell..."
+    echo "Add /usr/local/bin/zsh to /etc/shells"
+    echo "(Press enter to continue)"
+    echo "sudo vim /etc/shells"
+    read
+    sudo vim /etc/shells
+    chsh -s /usr/local/bin/zsh $USER
+fi
 
 # Various other settings
 defaults write NSGlobalDomain KeyRepeat -int 1 # Faster key repeat than is allowed from System Preferences
