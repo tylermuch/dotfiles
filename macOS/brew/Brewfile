@@ -2,9 +2,6 @@
 #   brew tap homebrew/bundle
 #   brew bundle
 
-brew "hh"
-brew "htop"
-brew "ncdu"
 brew "ssh-copy-id"
 brew "tig"
 brew "wget"
