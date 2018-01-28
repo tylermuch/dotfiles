@@ -49,12 +49,12 @@ fi
 ################################################
 # tmux helpers
 ################################################
-tmux_windows()
+__tmux_windows()
 {
     tmux list-windows -t dev | cut -d' ' -f2 | sed -E 's/(\*|-)$//'
 }
 
-tmux_window_index()
+__tmux_window_index()
 {
     # $1 = window name
     # prints window index
