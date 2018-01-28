@@ -3,16 +3,8 @@
 ###########################
 source ~/.bash_profile
 
-###########################
 # Prompt
-###########################
-ssh_hostname(){
-    if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-        echo "($(hostname)) "
-    fi
-}
-
-PS1='%F{119}$(ssh_hostname)%~
+PS1='%F{119}%~
 » %F{reset}'
 
 HISTFILE=$HOME/.zsh_history
