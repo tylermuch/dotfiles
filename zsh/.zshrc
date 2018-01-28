@@ -27,33 +27,3 @@ plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-export GIT_EDITOR='vim'
-export EDITOR='vim'
-
-if [ -f ~/.secrets ]; then
-    source ~/.secrets
-fi
-
-if [[ $(uname) == "Darwin" ]]; then
-    alias ctags="`brew --prefix`/bin/ctags"
-fi
-alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
-alias gitp='git --no-pager'
-alias diff='colordiff'
-
-LESSPIPE=`which src-hilite-lesspipe.sh`
-export LESSOPEN="| ${LESSPIPE} %s"
-export LESS=' -R -X -F '
-
-export PATH=$PATH:$USER/bin
-
-ff() {
-    FILE=`fzf $@`
-    if [[ -e $FILE ]]; then
-        echo $FILE
-        echo -n $FILE | pbcopy
-    fi
-}
-
-set rtp+=/usr/local/opt/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

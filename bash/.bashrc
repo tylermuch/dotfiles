@@ -1,9 +1,34 @@
 ################################################
-# Bash aliases
+# Misc.
 ################################################
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+export GIT_EDITOR='vim'
+export EDITOR='vim'
+
+alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
+alias gitp='git --no-pager'
+alias diff='colordiff'
+
+LESSPIPE=`which src-hilite-lesspipe.sh`
+export LESSOPEN="| ${LESSPIPE} %s"
+export LESS=' -R -X -F '
+
+export PATH=$PATH:$USER/bin
+
+################################################
+# secrets
+################################################
+if [ -f ~/.secrets ]; then
+    . ~/.secrets
 fi
+
+################################################
+# macOS .bashrc
+################################################
+if [[ $(uname) == "Darwin" ]]; then
+    if [ -f ~/.bashrc_macos ]; then
+        source ~/.bashrc_macos
+    fi
+fi    
 
 ################################################
 # tmux helpers
@@ -65,12 +90,4 @@ to() {
         tmux attach -t dev
     fi
 }
-
-
-################################################
-# secrets
-################################################
-if [ -f ~/.secrets ]; then
-    . ~/.secrets
-fi
 
