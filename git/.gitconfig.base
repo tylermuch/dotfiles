@@ -1,23 +1,23 @@
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset' --abbrev-commit --date=relative
-	s = status
-	d = diff
-	cp = cherry-pick
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	co = checkout
-	ours = "!f() { git co --ours $@ && git add %@; }; f"
-	theirs = "!f() { git co --theirs %@ && git add %@; }; f"
-	su = submodule update
-	oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset' --abbrev-commit --date=relative
+    s = status
+    d = diff
+    cp = cherry-pick
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    co = checkout
+    ours = "!f() { git co --ours $@ && git add %@; }; f"
+    theirs = "!f() { git co --theirs %@ && git add %@; }; f"
+    su = submodule update
+    oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | sed -ne \"s/^ //p\" | head -1' -
     dt = difftool
     ds = diff --stat
     up = "!git pull; git submodule update"
     b = rev-parse --abbrev-ref HEAD
 [push]
-	default = simple
+    default = simple
 [branch]
-	autoSetupMerge = always
-	autoSetupRebase = always
+    autoSetupMerge = always
+    autoSetupRebase = always
 [user]
-	name = Tyler Much
+    name = Tyler Much
