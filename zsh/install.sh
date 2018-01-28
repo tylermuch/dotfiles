@@ -20,20 +20,4 @@ if [[ "$SHELL" != "$ZSH_EXPECTED_DIR" ]]; then
     chsh -s "$ZSH_EXPECTED_DIR" "$USER"
 fi
 
-#    oh-my-zsh will install its own ~/.zshrc
-#    so we need to install it before we symlink our dotfiles
-#
-echo "Installing oh-my-zsh..."
-if [ ! -d $HOME/.oh-my-zsh ]; then
-    ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
-
-    if [[ $(uname) == "Linux" ]]; then
-        sudo apt-get install curl
-    fi
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    mkdir $ZSH_CUSTOM/themes
-    ln -sf $DIR/oh-my-zsh/tmuch.zsh-theme $ZSH_CUSTOM/themes/tmuch.zsh-theme
-fi
-
 ln -sf $DIR/zshrc $HOME/.zshrc
