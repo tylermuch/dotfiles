@@ -83,3 +83,7 @@ nmap <F9> :set list!<CR>
 nmap ; :Files<CR>
 nmap \f :Ack! 
 
+" Open files to last cursor position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
