@@ -20,7 +20,6 @@ RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
 #   also requires adding a space to the end of PS1
 ZLE_RPROMPT_INDENT=0
 
-
 ###########################
 # Other settings
 ###########################
@@ -34,7 +33,6 @@ zstyle ':completion:*' menu select
 # Enable caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zcache
-
 
 zstyle ':completion:*' completer _complete
 
@@ -51,9 +49,6 @@ zmodload -i zsh/complist
 # Then when completion is requested again, remove the first match and insert the second match, etc. 
 # When there are no more matches, go back to the first one again. Enabling this setting overrides auto_menu.
 unsetopt menu_complete
-
-# If this option is unset, output flow control via start/stop characters (usually assigned to ^S/^Q) is disabled in the shell's editor.
-unsetopt flowcontrol
 
 # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts. Substitutions within prompts do not affect the command status.
 setopt prompt_subst
