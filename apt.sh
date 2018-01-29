@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-sudo -v
-
-apt-get install vim
-apt-get install zsh
-apt-get install sublime-text
-ln -sf /opt/sublime/sublime_text /usr/bin/subl
+sudo apt-get install vim
+sudo apt-get install zsh
+sudo apt-get install tmux
+sudo apt-get install sublime-text
+sudo ln -sf /opt/sublime/sublime_text /usr/bin/subl
