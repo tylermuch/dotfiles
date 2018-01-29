@@ -84,7 +84,7 @@ __tmux_window_index()
 # create new tmux window in existing dev session
 # $1 = window name
 tn() {
-    if tmux_windows | grep -w ${1} > /dev/null; then
+    if __tmux_windows | grep -w ${1} > /dev/null; then
         echo "Window with that name already exists."
     else
         session_id=`tmux new-window -P -d -t dev -n "${1}"`
@@ -96,19 +96,19 @@ tn() {
 # tmux windows
 # cleanly list all tmux windows
 tw() {
-    tmux_windows
+    __tmux_windows
 }
 
 # tmux open
 # open tmux window with the given name
 # $1 = window name
 to() {
-    window_index=$(tmux_window_index "${1}")
+    window_index=$(__tmux_window_index "${1}")
 
     if [[ "$window_index" == "-1" ]];
     then
         echo "Window not found:"
-        tmux_windows
+        __tmux_windows
     else
         tmux select-window -t "dev:${window_index}"
         tmux attach -t dev
