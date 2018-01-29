@@ -1,3 +1,13 @@
+################################################
+# Bash aliases
+################################################
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+################################################
+# tmux helpers
+################################################
 tmux_windows()
 {
     tmux list-windows -t dev | cut -d' ' -f2 | sed -E 's/(\*|-)$//'
@@ -7,7 +17,7 @@ tmux_window_index()
 {
     # $1 = window name
     # prints window index
-    
+
     windows=$(tmux list-windows -t dev | cut -d' ' -f1,2 | sed -E 's/(\*|-)$//')
     window_indicies=$(echo "${windows}" | cut -d: -f1)
     window_names=$(echo "${windows}" | cut -d' ' -f2 | sed -E 's/(\*|-)$//')
@@ -45,7 +55,7 @@ tw() {
 # $1 = window name
 to() {
     window_index=$(tmux_window_index "${1}")
-   
+
     if [[ "$window_index" == "-1" ]];
     then
         echo "Window not found:"
@@ -55,3 +65,12 @@ to() {
         tmux attach -t dev
     fi
 }
+
+
+################################################
+# bash secrets
+################################################
+if [ -f ~/.bash_secrets ]; then
+    . ~/.bash_secrets
+fi
+
