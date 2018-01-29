@@ -17,6 +17,8 @@ alias l='ls -FGlAhp'
 alias less='less -FSRXc'
 alias gitp='git --no-pager'
 alias diff='colordiff'
+alias sudo='sudo ' # Enable aliases to be sudo'ed
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 ################################################
 # Misc.
