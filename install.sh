@@ -60,6 +60,11 @@ else
 	echo "Run: git submodule update --init --recursive"
 fi
 
+
 defaults write NSGlobalDomain KeyRepeat -int 1
+
+mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Execute prefix+I in tmux to install tmux plugins"
 
 echo "Restart terminal"

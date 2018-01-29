@@ -17,6 +17,7 @@ brew "tree"
 brew "fzf"
 brew "zsh"
 brew "tmux"
+brew "ansifilter" # for tmux-logging plugin
 
 cask 'caffeine'
 cask 'flux'
