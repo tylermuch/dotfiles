@@ -6,20 +6,15 @@ source ~/.bash_profile
 ###########################
 # Prompt
 ###########################
-__tmux_prompt(){
-    if [[ -n "$TMUX" ]]; then
-        echo "(tmux) "
-    fi
-}
-
 __ssh_hostname_prompt(){
     if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
         echo "($(hostname)) "
     fi
 }
 
-PS1='%F{145}$(__ssh_hostname_prompt)$(__tmux_prompt)%F{119}%~
+PS1='%F{119}%~
 » %F{reset}'
+RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
 
 ###########################
 # Other settings
