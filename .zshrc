@@ -18,7 +18,7 @@ __ssh_hostname_prompt(){
     fi
 }
 
-PS1='%F{119}$(__ssh_hostname_prompt)$(__tmux_prompt)%~
+PS1='%F{145}$(__ssh_hostname_prompt)$(__tmux_prompt)%F{119}%~
 » %F{reset}'
 
 ###########################
