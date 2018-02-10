@@ -25,3 +25,5 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 25
 # Disable press-and-hold in favor of key-repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
+# Enable three finger dragging windows
+defaults write com.apple.AppleMultitouchTrackpad -bool true
