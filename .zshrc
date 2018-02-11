@@ -13,12 +13,8 @@ __ssh_hostname_prompt(){
 }
 
 PS1='%F{119}%~
-»  %F{reset}'
+» %F{reset}'
 RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
-
-# Don't display space after RPS1
-#   also requires adding a space to the end of PS1
-ZLE_RPROMPT_INDENT=0
 
 ###########################
 # Other settings
