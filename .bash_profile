@@ -47,8 +47,6 @@ if [[ $(uname) == "Darwin" ]]; then
     if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
         export PATH="$PATH:/usr/local/opt/fzf/bin"
         set rtp+=/usr/local/opt/fzf
-        [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.bash" 2> /dev/null
-        source "/usr/local/opt/fzf/shell/key-bindings.bash"
     fi
 fi    
 
