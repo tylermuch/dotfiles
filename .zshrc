@@ -20,10 +20,8 @@ RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
 # macOS specific stuff
 ################################################
 if [[ $(uname) == "Darwin" ]]; then
-    if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-        [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-        source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-    fi
+    source "/usr/local/opt/fzf/shell/completion.zsh"
+    source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi    
 
 ###########################

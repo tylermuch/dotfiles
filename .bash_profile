@@ -47,10 +47,8 @@ if [[ $(uname) == "Darwin" ]]; then
         fi
     }
 
-    if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-        export PATH="$PATH:/usr/local/opt/fzf/bin"
-        set rtp+=/usr/local/opt/fzf
-    fi
+    export PATH="$PATH:/usr/local/opt/fzf/bin"
+    set rtp+=/usr/local/opt/fzf
 fi    
 
 ################################################
