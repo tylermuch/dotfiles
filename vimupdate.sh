@@ -15,7 +15,6 @@ repos=(
     mileszs/ack.vim
     sheerun/vim-polyglot
     vim-airline/vim-airline-themes
-    airblade/vim-gitgutter
 )
 
 set -e
