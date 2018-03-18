@@ -12,6 +12,9 @@ execute pathogen#infect()
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
 
+" Turn on syntax highlighting
+syntax on
+
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -24,12 +27,6 @@ map Q gq
 " Enable the mouse
 if has('mouse')
   set mouse=a
-endif
-
-" Switch syntax highlighting on, when the terminal has colors 
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
 endif
 
 " Show line numbers
