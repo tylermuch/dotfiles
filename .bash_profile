@@ -8,7 +8,6 @@ export PATH=$PATH:/usr/libexec
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$USER/bin
 
-
 ################################################
 # Aliases
 ################################################
@@ -27,6 +26,7 @@ export GIT_EDITOR='vim'
 export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+export TERM=xterm-256color
 
 ################################################
 # macOS specific stuff
