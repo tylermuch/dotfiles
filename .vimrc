@@ -66,11 +66,13 @@ let g:airline_theme='base16_bright'
 set listchars=tab:>-
 set list
 
-" Keybindings
+" Normal mode keybinds
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :set list!<CR>
 nmap ; :Files<CR>
-nmap \f :Ack! 
+nmap f :Ag 
+nmap l :Lines<CR>
+nmap b :Buffers<CR>
 
 " Open files to last cursor position
 if has("autocmd")
