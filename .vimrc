@@ -70,6 +70,7 @@ nmap ; :Files<CR>
 nmap f :Ag 
 nmap l :Lines<CR>
 nmap b :Buffers<CR>
+nmap m :MultipleCursorsFind<SPACE>
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
