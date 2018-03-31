@@ -21,9 +21,6 @@ set backspace=indent,eol,start
 " Keep 50 lines of command line history
 set history=50  
 
-" Don't use Ex mode, use Q for formatting line width
-map Q gq
-
 " Enable the mouse
 if has('mouse')
   set mouse=a
@@ -73,6 +70,9 @@ nmap ; :Files<CR>
 nmap f :Ag 
 nmap l :Lines<CR>
 nmap b :Buffers<CR>
+
+" Don't use Ex mode, use Q for formatting line width
+map Q gq
 
 " Open files to last cursor position
 if has("autocmd")
