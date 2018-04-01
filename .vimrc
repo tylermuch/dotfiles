@@ -64,7 +64,7 @@ set listchars=tab:>-
 set list
 
 " Normal mode keybinds
-nmap <F6> :Limelight<CR>
+nmap <F6> :Limelight!!<CR>
 nmap <F7> :Goyo<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :set list!<CR>
