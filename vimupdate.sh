@@ -69,6 +69,18 @@ repos=(
     #
     #     Ctrl-\ s    View references of symbol
     gnattishness/cscope_maps
+
+    # goyo
+    #     hide all vim window elements
+    #
+    #     :Goyo   nmap = F7
+    junegunn/goyo.vim
+
+    # limelight
+    #     highlight only current block/paragraph of code/text
+    #
+    #     :Limelight  nmap = F6
+    junegunn/limelight.vim
 )
 
 set -e
