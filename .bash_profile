@@ -28,9 +28,6 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export TERM=xterm-256color
 
-# Append to history file
-shopt -s histappend
-
 ################################################
 # macOS specific stuff
 ################################################
