@@ -84,6 +84,26 @@ setopt inc_append_history
 # Allow comments even in interactive shells
 setopt interactivecomments
 
+# Don't treat '#', '~', and '^' as characters part of patterns for filename generation, etc.
+unsetopt extended_glob
+
+# If a command is issued that can't be executed as a normal command, and the
+# command is the name of a directory, perform a 'cd' to that directory
+setopt auto_cd
+
+# Push the old directory onto the directory stack when cd'ing
+setopt auto_pushd
+
+# Do not print the directory stack after pushd or popd
+setopt pushd_silent
+
+# Disallow '>' redirection to overwrite existing files.
+# '>|' or '>!' must be used to overwrite a file.
+setopt no_clobber
+
+# Send the HUP signal to running jobs when the shell exits
+unsetopt hup
+
 # Start typing + [Up-Arrow] - prefix-match history forward
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
