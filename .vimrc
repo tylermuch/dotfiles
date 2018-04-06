@@ -55,9 +55,10 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" Theme settings
+" Plugin settings
 colorscheme jellybeans
 let g:airline_theme='base16_bright'
+let g:limelight_conceal_ctermfg = 'gray'
 
 " Display >--- for tabs
 set listchars=tab:>-
@@ -82,5 +83,3 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
 
-
-let g:limelight_conceal_ctermfg = 'gray'

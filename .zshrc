@@ -13,7 +13,7 @@ __ssh_hostname_prompt(){
 }
 
 PS1='%F{119}%~
-» %F{reset}'
+> %F{reset}'
 RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
 
 ################################################
