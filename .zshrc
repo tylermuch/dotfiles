@@ -81,6 +81,9 @@ setopt hist_verify
 # New history lines are added to the $HISTFILE incrementally (as soon as they're entered), rather than waiting until the shell exits.
 setopt inc_append_history
 
+# Share history accros all session rather than waiting for a new shell invocation
+setopt share_history
+
 # Allow comments even in interactive shells
 setopt interactivecomments
 
