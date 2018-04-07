@@ -104,6 +104,12 @@ setopt no_clobber
 # Send the HUP signal to running jobs when the shell exits
 unsetopt hup
 
+# Make globbing (filename generation) case insensitive
+unsetopt case_glob
+
+# Don't beep on an ambiguous completion
+unsetopt list_beep
+
 # Start typing + [Up-Arrow] - prefix-match history forward
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
