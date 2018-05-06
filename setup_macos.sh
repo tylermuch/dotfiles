@@ -8,6 +8,9 @@ $DIR/brew.sh
 echo "Setting up vim..."
 $DIR/vimupdate.sh
 
+echo "Setting up tmux..."
+$DIR/tmuxsetup.sh
+
 echo "Installing zsh..."
 $DIR/zshsetup.sh
 
