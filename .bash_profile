@@ -34,9 +34,29 @@ export TERM=xterm-256color
 ################################################
 if [[ $(uname) == "Darwin" ]]; then
     alias ctags="`brew --prefix`/bin/ctags"
-    alias openx='find . -d 1 | grep xcodeproj | head -n 1 | xargs open --fresh --background'
     alias ag='ag --ignore cscope.out --ignore tags'
    
+    openx() {
+        XCODE_PATH=$(dirname "$(dirname "$(xcode-select -p)")")
+        printf '\e[33m%s\e[0m\n' "-- $(basename "$(dirname "$XCODE_PATH")")/$(basename "$XCODE_PATH") --"
+
+        if [ -z "$1" ]; then
+            DIR=$(basename "$(pwd)")
+            if [ -d "$DIR".xcodeproj ]; then
+                open -F -a "$XCODE_PATH" "$DIR".xcodeproj
+            else
+                find . -name '*.xcodeproj' -maxdepth 1 | head -n 1 | xargs open -F -a "$XCODE_PATH"
+            fi
+        else
+            DIR=$(basename "$1")
+            if [ -d "$1"/"$DIR".xcodeproj ]; then
+                open -F -a "$XCODE_PATH" "$1"/"$DIR".xcodeproj
+            else
+                find "$1" -name '*.xcodeproj' -maxdepth 1 | head -n 1 | xargs open -F -a "$XCODE_PATH"
+            fi
+        fi
+    }
+
     subl() {
         "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$@"
     }
