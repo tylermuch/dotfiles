@@ -61,11 +61,17 @@ if [[ $(uname) == "Darwin" ]]; then
         "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$@"
     }
 
+    fv() {
+        vim `echo "$_FZF_LAST" | tr '\n' ' '`
+    }
+
     ff() {
-        FILE=`fzf $@`
-        if [[ -e $FILE ]]; then
-            echo $FILE
-            echo -n $FILE | pbcopy
+        _FZF_LAST=`fzf -m $@`
+        if [[ -n $_FZF_LAST ]]; then
+            echo $_FZF_LAST
+            export _FZF_LAST
+        else
+            unset _FZF_LAST
         fi
     }
 
