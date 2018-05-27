@@ -44,9 +44,6 @@ set scrolloff=10
 " Haven't been bitten by not having an undo file yet...and they're really annoying.
 set noundofile
 
-" Highlight the line the cursor is on
-set cursorline
-
 " fzf in vim!
 set rtp+=/usr/local/opt/fzf
 
