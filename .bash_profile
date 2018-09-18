@@ -144,6 +144,13 @@ ta() {
     tmux attach -t $@
 }
 
+# 'rg ssh' -> 'rg ssh .'
+# so that file paths are appended with './'
+# this helps tmux-copy recognize the file path in a search
+rg() {
+    /usr/local/bin/rg $@ .
+}
+
 ################################################
 # secrets
 ################################################
