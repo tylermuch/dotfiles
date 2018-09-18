@@ -18,6 +18,7 @@ brew install ssh-copy-id            \
              vim                    \
              tmux                   \
              ansifilter             \
+             reattach-to-user-namespace \
              zsh
 
 brew cask install --appdir="/Applications" caffeine     \
