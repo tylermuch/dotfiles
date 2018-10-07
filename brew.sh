@@ -11,7 +11,7 @@ brew install ssh-copy-id            \
              wget                   \
              watch                  \
              ctags                  \
-             the_silver_searcher    \
+             ripgrep \
              tree                   \
              fzf                    \
              colordiff              \
