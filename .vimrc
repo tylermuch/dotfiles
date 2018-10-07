@@ -15,6 +15,9 @@ filetype plugin indent on
 " Turn on syntax highlighting
 syntax on
 
+" Highlight search results
+set hlsearch
+
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
