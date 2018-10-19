@@ -81,6 +81,8 @@ repos=(
     #
     #     :Limelight  nmap = F6
     junegunn/limelight.vim
+
+    jremmen/vim-ripgrep
 )
 
 set -e
