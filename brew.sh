@@ -24,7 +24,8 @@ brew install ssh-copy-id            \
 
 brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \
-                                           sublime-text 
+                                           sublime-text \
+                                           meld 
 mkdir ~/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 

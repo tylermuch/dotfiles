@@ -16,3 +16,10 @@
 [branch]
     autoSetupMerge = always
     autoSetupRebase = always
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$REMOTE\"
