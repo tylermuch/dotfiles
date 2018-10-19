@@ -125,3 +125,9 @@ zle -N down-line-or-beginning-search
 bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
+################################################
+# Launch tmux if in ssh session
+################################################
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
