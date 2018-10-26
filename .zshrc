@@ -125,6 +125,9 @@ zle -N down-line-or-beginning-search
 bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
+# Source goto
+[[ -s "/usr/local/share/goto.sh" ]] && source /usr/local/share/goto.sh
+
 ################################################
 # Launch tmux if in ssh session
 ################################################
