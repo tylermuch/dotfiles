@@ -1,11 +1,7 @@
 [alias]
     b = rev-parse --abbrev-ref HEAD
-    d = diff
     s = status
     cp = cherry-pick
-    su = submodule update
-    dt = difftool
-    ds = diff --stat
     ours = "!f() { git co --ours $@ && git add %@; }; f"
     theirs = "!f() { git co --theirs %@ && git add %@; }; f"
     up = "!git pull; git submodule update"
