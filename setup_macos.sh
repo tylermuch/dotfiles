@@ -30,3 +30,6 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Enable three finger dragging windows
 defaults write com.apple.AppleMultitouchTrackpad -bool true
+
+# Prevent system sleep when remote session is active
+sudo pmset -c ttyskeepawake 1
