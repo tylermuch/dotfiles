@@ -81,5 +81,7 @@ map Q gq
 " Open files to last cursor position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  au BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+  au VimLeave * call system("tmux setw automatic-rename")
 endif
 
