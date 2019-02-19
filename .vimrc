@@ -59,6 +59,7 @@ endif
 colorscheme jellybeans
 let g:airline_theme='base16_bright'
 let g:limelight_conceal_ctermfg = 'gray'
+set term=screen-256color
 
 " Display >--- for tabs
 set listchars=tab:>-
