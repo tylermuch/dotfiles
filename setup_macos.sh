@@ -17,6 +17,8 @@ $DIR/zshsetup.sh
 echo "Symlinking dotfiles..."
 $DIR/symlink.sh
 
+echo "*.swp" > $HOME/.gitignore_global
+
 echo "Setting macOS user defaults..."
 defaults write com.apple.finder ShowPathBar -bool true
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
