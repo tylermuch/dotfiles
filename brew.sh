@@ -26,6 +26,11 @@ brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \
                                            sublime-text \
                                            meld 
+
+# https://github.com/aykamko/tag
+brew tap aykamko/tag-ag
+brew install tag-ag
+
 mkdir ~/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 
