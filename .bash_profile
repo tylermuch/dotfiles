@@ -35,7 +35,6 @@ export TERM=xterm-256color
 ################################################
 if [[ $(uname) == "Darwin" ]]; then
     alias ctags="`brew --prefix`/bin/ctags"
-    alias ag='ag --ignore cscope.out --ignore tags'
    
     openx() {
         XCODE_PATH=$(dirname "$(dirname "$(xcode-select -p)")")
