@@ -51,8 +51,8 @@ set noundofile
 set rtp+=/usr/local/opt/fzf
 
 " Tell ack.vim to use ag instead of ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 " Plugin settings
@@ -66,14 +66,19 @@ set listchars=tab:>-
 set list
 
 " Normal mode keybinds
+"   Toggle highlighting tabs
 nmap <F5> :set list!<CR>
-nmap <F6> :Limelight!!<CR>
-nmap <F7> :Goyo<CR>
+"   Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
+"   Search file names in cwd using fzf
 nmap ; :Files<CR>
-nmap f :Ag 
+"   Search file contents in cwd using rg+fzf
+nmap f :Ag
+"   Search current buffer contents using rg+fzf
 nmap l :Lines<CR>
+"   Search open buffers using fzf
 nmap b :Buffers<CR>
+"   Place multiplecursor at start of each search result
 nmap m :MultipleCursorsFind<SPACE>
 
 " Don't use Ex mode, use Q for formatting line width
