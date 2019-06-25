@@ -75,15 +75,15 @@ if [[ $(uname) == "Darwin" ]]; then
         fi
     }
 
+    if (( $+commands[tag] )); then
+      export TAG_SEARCH_PROG=rg
+      tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
+      alias rg=tag
+    fi
+
     export PATH="$PATH:/usr/local/opt/fzf/bin"
     set rtp+=/usr/local/opt/fzf
 fi    
-
-if (( $+commands[tag] )); then
-  export TAG_SEARCH_PROG=rg
-  tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
-  alias rg=tag
-fi
 
 ################################################
 # tmux helpers
