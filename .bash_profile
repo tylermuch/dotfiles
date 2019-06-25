@@ -62,16 +62,15 @@ if [[ $(uname) == "Darwin" ]]; then
     }
 
     fv() {
-        vim `echo "$_FZF_LAST" | tr '\n' ' '`
+        vim `echo "$_FZF" | tr '\n' ' '`
     }
 
     ff() {
-        _FZF_LAST=`fzf -m $@`
-        if [[ -n $_FZF_LAST ]]; then
-            echo $_FZF_LAST
-            export _FZF_LAST
-        else
-            unset _FZF_LAST
+        _FZF_TMP=`fzf -m $@`
+        if [[ -n $_FZF_TMP ]]; then
+            _FZF=$_FZF_TMP
+            echo $_FZF
+            export _FZF
         fi
     }
 
