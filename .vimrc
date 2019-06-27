@@ -73,7 +73,7 @@ nmap <F8> :TagbarToggle<CR>
 "   Search file names in cwd using fzf
 nmap ; :Files<CR>
 "   Search file contents in cwd using rg+fzf
-nmap f :Ag
+nmap f :Ag<SPACE>
 "   Search current buffer contents using rg+fzf
 nmap l :Lines<CR>
 "   Search open buffers using fzf
