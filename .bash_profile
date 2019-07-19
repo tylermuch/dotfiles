@@ -20,6 +20,7 @@ alias sudo='sudo ' # Enable aliases to be sudo'ed
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias which='which -a'
 alias tmux='tmux -2'
+alias cls="clear; printf '\e[3J'; clear"
 
 ################################################
 # Misc.
