@@ -24,8 +24,7 @@ brew install ssh-copy-id            \
 
 brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \
-                                           sublime-text \
-                                           meld 
+                                           sublime-text
 
 # https://github.com/aykamko/tag
 brew tap aykamko/tag-ag
