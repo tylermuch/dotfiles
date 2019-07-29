@@ -16,7 +16,6 @@
     tool = bc3
 [difftool]
     prompt = false
-    trustExitCode = true
 [merge]
     tool = bc3
 [mergetool]
