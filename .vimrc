@@ -21,8 +21,8 @@ set hlsearch
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" Keep 50 lines of command line history
-set history=50  
+" Keep 1000 lines of command line history
+set history=1000
 
 " Enable the mouse
 if has('mouse')
@@ -31,6 +31,33 @@ endif
 
 " Show line numbers
 set number
+
+" When a buffer is brought to foreground, remember undo history and marks
+set hidden
+
+" Highlight dynamically as pattern is typed
+set incsearch
+
+" Disable error bells
+set noerrorbells
+
+" Don't reset cursor to start of line when moving around
+set nostartofline
+
+" Don't wrap lines
+set nowrap
+
+" Don't redraw when we don't have to
+set lazyredraw
+
+" Send more characters at a given time. Makes scrolling smoother
+set ttyfast
+
+" Restore buffer list and marks for 9999 files, registers up to 512Kb are remembered
+set viminfo=%,'9999,s512,n~/.vim/viminfo
+
+" Use visual bell instead of audible bell
+set visualbell
 
 " Make cscope work.
 " Ctrl+\ -> s : show references of symbol
@@ -41,8 +68,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" Preserve padding of at least 10 lines between cursor and top or bottom of the window
-set scrolloff=10
+" Preserve padding of at least 5 lines between cursor and top or bottom of the window
+set scrolloff=5
 
 " Haven't been bitten by not having an undo file yet...and they're really annoying.
 set noundofile
