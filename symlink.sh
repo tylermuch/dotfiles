@@ -9,6 +9,7 @@ declare -a FILES_TO_SYMLINK=(
     '.tmux.conf'
     '.vimrc'
     '.zshrc'
+    '.hushlogin'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do
