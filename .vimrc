@@ -44,9 +44,6 @@ set noerrorbells
 " Don't reset cursor to start of line when moving around
 set nostartofline
 
-" Don't wrap lines
-set nowrap
-
 " Don't redraw when we don't have to
 set lazyredraw
 
