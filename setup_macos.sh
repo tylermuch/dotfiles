@@ -36,10 +36,10 @@ defaults write com.apple.AppleMultitouchTrackpad -bool true
 # Prevent system sleep when remote session is active
 sudo pmset -c ttyskeepawake 1
 
-# Behavior when devices in Recovery Mode are attached
-if [[ `sw_vers -productVersion` == "10.15"* ]]; then
-  # Suppress Finder pop-up
-  #defaults write com.apple.AMPDeviceDiscoveryAgent reveal-devices 0
-  # Ignore devices
-  defaults write com.apple.AMPDeviceDiscoveryAgent ignore-devices 1
-fi
+# Suppress pop-ups when devices in Recovery Mode are attached
+defaults write com.apple.MobileDeviceUpdater Disabled -bool YES
+defaults write com.apple.iTunes dontAutomaticallySyncIPods -int 1
+defaults write com.apple.iTunesHelper ignore-devices 1
+defaults write com.apple.iTunes ignore-devices 1
+defaults write com.apple.AMPDeviceDiscoveryAgent ignore-devices 1
+defaults write com.apple.AMPDeviceDiscoveryAgent reveal-devices 0
