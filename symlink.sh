@@ -10,6 +10,7 @@ declare -a FILES_TO_SYMLINK=(
     '.vimrc'
     '.zshrc'
     '.hushlogin'
+    '.lldbinit'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do
