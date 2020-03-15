@@ -61,8 +61,8 @@ set visualbell
 set runtimepath^=~/.vim/bundle/cscope_maps
 
 " Spaces > Tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Preserve padding of at least 5 lines between cursor and top or bottom of the window
