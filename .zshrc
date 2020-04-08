@@ -22,6 +22,7 @@ RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
 if [[ $(uname) == "Darwin" ]]; then
     source "/usr/local/opt/fzf/shell/completion.zsh"
     source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi    
 
 ###########################
