@@ -12,9 +12,15 @@ __ssh_hostname_prompt(){
     fi
 }
 
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '(%b)'
+zstyle ':vcs_info:*' enable git
+
 PS1='%F{119}%~
 > %F{reset}'
-RPS1='%F{145}$(__ssh_hostname_prompt)%F{reset}'
+RPS1='%F{145}$(__ssh_hostname_prompt) %F{119}${vcs_info_msg_0_}%F{145}%F{reset}'
 
 ################################################
 # macOS specific stuff
