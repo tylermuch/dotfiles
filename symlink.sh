@@ -11,6 +11,7 @@ declare -a FILES_TO_SYMLINK=(
     '.zshrc'
     '.hushlogin'
     '.lldbinit'
+    '.gitignore_global'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do
