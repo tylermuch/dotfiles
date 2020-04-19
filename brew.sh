@@ -23,7 +23,6 @@ brew install ssh-copy-id            \
              goto                   \
              mosh                   \
              fd
->>>>>>> Install fd and use for fzf inside vim
 
 brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \
