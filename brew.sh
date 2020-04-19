@@ -21,7 +21,9 @@ brew install ssh-copy-id            \
              reattach-to-user-namespace \
              zsh                    \
              goto                   \
-             mosh
+             mosh                   \
+             fd
+>>>>>>> Install fd and use for fzf inside vim
 
 brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \

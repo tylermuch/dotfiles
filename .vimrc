@@ -73,6 +73,8 @@ set noundofile
 
 " fzf in vim!
 set rtp+=/usr/local/opt/fzf
+" Use fd to find files
+let $FZF_DEFAULT_COMMAND = 'fd --type f'
 
 " Tell ack.vim to use ag instead of ack
 if executable('rg')
