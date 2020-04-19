@@ -22,7 +22,8 @@ brew install ssh-copy-id            \
              zsh                    \
              goto                   \
              mosh                   \
-             fd
+             fd                     \
+             the_silver_searcher
 
 brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \
