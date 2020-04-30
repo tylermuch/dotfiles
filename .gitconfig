@@ -17,8 +17,9 @@
 [difftool]
     prompt = false
 [merge]
-    tool = bc3
-[mergetool]
-    prompt = false
+    tool = smerge
+[mergetool.smerge]
+    cmd = 'smerge mergetool "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"'
+    trustExitCode = true
 [core]
 	excludesfile = /Users/tmuch/.gitignore_global
