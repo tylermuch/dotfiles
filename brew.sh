@@ -26,13 +26,15 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
 
 brew cask install --appdir="/Applications" caffeine     \
                                            alfred       \
-                                           sublime-text
+                                           sublime-text \
+                                           sublime-merge
+
+mkdir ~/bin
+ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
+ln -sf "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" $HOME/bin/smerge
 
 # https://github.com/aykamko/tag
 brew tap aykamko/tag-ag
 brew install tag-ag
-
-mkdir ~/bin
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 
 brew cleanup

@@ -6,7 +6,7 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local
 export PATH=$PATH:/usr/libexec
 export PATH=$PATH:/usr/sbin
-export PATH=$PATH:$USER/bin
+export PATH=$PATH:$HOME/bin
 
 ################################################
 # Aliases
@@ -56,10 +56,6 @@ if [[ $(uname) == "Darwin" ]]; then
                 find "$1" -name '*.xcodeproj' -maxdepth 1 | head -n 1 | xargs open -F -a "$XCODE_PATH"
             fi
         fi
-    }
-
-    subl() {
-        "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$@"
     }
 
     fv() {
