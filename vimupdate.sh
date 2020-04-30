@@ -83,6 +83,14 @@ repos=(
     junegunn/limelight.vim
 
     jremmen/vim-ripgrep
+
+    # vim-unimpaired
+    #     handy shortcuts
+    #     [<Space> Add new line before
+    #     ]<Space> Add new line after
+    #     [e Exchange current line with above
+    #     ]e Exchange current line with below
+    tpope/vim-unimpaired
 )
 
 set -e
