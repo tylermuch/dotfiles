@@ -24,10 +24,11 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              the_silver_searcher         `# Faster grep. Used for :Ag in vim until I figure out :Rg...` \
              bat                         `# Better 'cat'`
 
-brew cask install --appdir="/Applications" caffeine     \
-                                           alfred       \
-                                           sublime-text \
-                                           sublime-merge
+brew cask install --appdir="/Applications" caffeine      \
+                                           alfred        \
+                                           sublime-text  \
+                                           sublime-merge \
+                                           contexts
 
 mkdir ~/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
