@@ -29,8 +29,9 @@ if has('mouse')
   set mouse=a
 endif
 
-" Show line numbers
-set number
+" Enable 'hybrid' line number mode
+set number relativenumber
+set nu rnu
 
 " When a buffer is brought to foreground, remember undo history and marks
 set hidden
