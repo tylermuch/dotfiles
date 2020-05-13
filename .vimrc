@@ -98,15 +98,15 @@ nmap <F5> :set list!<CR>
 "   Toggle Tagbar
 nmap <F8> :TagbarToggle<CR>
 "   Search file names in cwd using fzf
-nmap ; :Files<CR>
+nmap <leader>; :Files<CR>
 "   Search file contents in cwd using rg+fzf
-nmap f :Ag<SPACE>
+nmap <leader>f :Ag<SPACE>
 "   Search current buffer contents using rg+fzf
-nmap l :Lines<CR>
+nmap <leader>l :Lines<CR>
 "   Search open buffers using fzf
-nmap b :Buffers<CR>
+nmap <leader>b :Buffers<CR>
 "   Place multiplecursor at start of each search result
-nmap m :MultipleCursorsFind<SPACE>
+nmap <leader>m :MultipleCursorsFind<SPACE>
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
