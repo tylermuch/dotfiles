@@ -1,4 +1,7 @@
 [alias]
+    fs = fuzzy status
+    fd = fuzzy diff
+    fl = fuzzy log
     b = rev-parse --abbrev-ref HEAD
     s = status
     cp = cherry-pick

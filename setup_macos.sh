@@ -41,3 +41,8 @@ defaults write com.apple.iTunesHelper ignore-devices 1
 defaults write com.apple.iTunes ignore-devices 1
 defaults write com.apple.AMPDeviceDiscoveryAgent ignore-devices 1
 defaults write com.apple.AMPDeviceDiscoveryAgent reveal-devices 0
+
+# Install git-fuzzy
+mkdir -p ~/bin
+git clone https://github.com/bigH/git-fuzzy.git ~/bin/git-fuzzy
+echo "export PATH=\"~/bin/git-fuzzy/bin:\$PATH\"" >> ~/.zshrc

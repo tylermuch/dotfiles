@@ -22,7 +22,9 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              goto                        `# Quick file directory aliasing/navigation` \
              fd                          `# Faster/prettier 'find'` \
              the_silver_searcher         `# Faster grep. Used for :Ag in vim until I figure out :Rg...` \
-             bat                         `# Better 'cat'`
+             bat                         `# Better 'cat'` \
+             git-delta                   `# Better git diffs` \
+             exa                         `# Better 'ls'`
 
 brew cask install --appdir="/Applications" caffeine      \
                                            alfred        \
