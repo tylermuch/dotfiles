@@ -7,6 +7,7 @@ export PATH=$PATH:/usr/local
 export PATH=$PATH:/usr/libexec
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin/git-fuzzy/bin
 
 ################################################
 # Aliases
