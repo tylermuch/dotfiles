@@ -107,6 +107,10 @@ nmap <leader>l :Lines<CR>
 nmap <leader>b :Buffers<CR>
 "   Place multiplecursor at start of each search result
 nmap <leader>m :MultipleCursorsFind<SPACE>
+"   Go to previous buffer
+nmap <leader><TAB> :bprevious<CR>
+"   Go to next buffer
+nmap <leader>q :bnext<CR>
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
