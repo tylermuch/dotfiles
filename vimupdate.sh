@@ -91,6 +91,8 @@ repos=(
     #     [e Exchange current line with above
     #     ]e Exchange current line with below
     tpope/vim-unimpaired
+
+    Yggdroot/indentLine
 )
 
 set -e
