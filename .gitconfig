@@ -2,6 +2,7 @@
     fs = fuzzy status
     fd = fuzzy diff
     fl = fuzzy log
+    fb = fuzzy branch
     b = rev-parse --abbrev-ref HEAD
     s = status
     cp = cherry-pick
