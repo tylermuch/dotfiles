@@ -31,6 +31,7 @@ export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export TERM=xterm-256color
+export BAT_THEME=Dracula
 
 ################################################
 # macOS specific stuff
