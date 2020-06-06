@@ -32,6 +32,8 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export TERM=xterm-256color
 export BAT_THEME=Dracula
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 ################################################
 # macOS specific stuff
