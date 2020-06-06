@@ -92,6 +92,8 @@ repos=(
     #     ]e Exchange current line with below
     tpope/vim-unimpaired
 
+    # indentLine
+    #     Display indentation markers, per 'ts'
     Yggdroot/indentLine
 )
 
