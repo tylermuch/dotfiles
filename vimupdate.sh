@@ -95,6 +95,8 @@ repos=(
     # indentLine
     #     Display indentation markers, per 'ts'
     Yggdroot/indentLine
+
+    airblade/vim-gitgutter
 )
 
 set -e
