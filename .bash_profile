@@ -67,7 +67,12 @@ if [[ $(uname) == "Darwin" ]]; then
     }
 
     ff() {
-        _FZF_TMP=`fzf -m $@`
+        _FZF_CMD="fzf -m"
+        for var in "$@"
+        do
+          _FZF_CMD="$_FZF_CMD -q $var"
+        done
+        _FZF_TMP=`eval ${_FZF_CMD}`
         if [[ -n $_FZF_TMP ]]; then
             _FZF=$_FZF_TMP
             echo $_FZF
