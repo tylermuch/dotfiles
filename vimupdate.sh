@@ -54,6 +54,7 @@ repos=(
     #     :Buffers    Search vim buffers, nmap = b
     #     :Lines      Search lines in buffer, nmap = l
     #     :Ag         Search file content, nmap = f
+    junegunn/fzf
     junegunn/fzf.vim
 
     # vim-polyglot
