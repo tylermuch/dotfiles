@@ -1,0 +1,21 @@
+font:
+  size: 13
+  normal:
+    family: RobotoMono Nerd Font Mono
+    style: Medium
+  bold:
+    family: RobotoMono Nerd Font Mono
+    style: Bold
+  italic:
+    family: RobotoMono Nerd Font Mono
+    style: Italic
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+scrolling:
+  history: 100000
+mouse:
+  url:
+    launcher:
+      program: open

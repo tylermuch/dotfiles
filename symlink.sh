@@ -12,6 +12,7 @@ declare -a FILES_TO_SYMLINK=(
     '.hushlogin'
     '.lldbinit'
     '.gitignore_global'
+    '.alacritty.yml'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do
