@@ -27,3 +27,5 @@
     trustExitCode = true
 [core]
 	excludesfile = /Users/tmuch/.gitignore_global
+[init]
+	defaultBranch = main
