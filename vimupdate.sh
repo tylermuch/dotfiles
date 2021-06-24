@@ -97,7 +97,19 @@ repos=(
     #     Display indentation markers, per 'ts'
     Yggdroot/indentLine
 
+    # vim-gitgutter
+    #     Mark modified lines in the left gutter next to line numbers
     airblade/vim-gitgutter
+
+    # vim-sneak
+    #     Faster navigation
+    #     s{char}{char} to highlight all occurances of {char}{char}
+    #     ; to go to next occurance
+    #     3; to go to third occurance
+    #     S to search backwards
+    #     3dzqt to delete up to the third instance of 'qt'
+    #     5sxy to go immediately to the next instance 'xy' within 5 lines of the cursor
+    justinmk/vim-sneak
 )
 
 set -e
