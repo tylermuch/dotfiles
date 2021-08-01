@@ -109,6 +109,8 @@ nmap <leader>m :MultipleCursorsFind<SPACE>
 nmap <leader><TAB> :bprevious<CR>
 "   Go to next buffer
 nmap <leader>q :bnext<CR>
+"   Search for word under cursor
+nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
