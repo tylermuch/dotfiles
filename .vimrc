@@ -115,6 +115,10 @@ nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
 
+" Use vertical cursor in insert mode
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+
 " Open files to last cursor position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
