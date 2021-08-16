@@ -119,6 +119,8 @@ map Q gq
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 
+let g:fzf_preview_window = ['up:60%']
+
 " Open files to last cursor position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
