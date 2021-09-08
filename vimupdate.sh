@@ -110,6 +110,10 @@ repos=(
     #     3dzqt to delete up to the third instance of 'qt'
     #     5sxy to go immediately to the next instance 'xy' within 5 lines of the cursor
     justinmk/vim-sneak
+    
+    # vim-gutentags
+    #     (re)generate tag files automatically
+    ludovicchabant/vim-gutentags
 )
 
 set -e
