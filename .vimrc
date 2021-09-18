@@ -132,31 +132,3 @@ if has("autocmd")
   au VimLeave * call system("tmux setw automatic-rename")
 endif
 
-" From: https://gist.github.com/amitab/cd051f1ea23c588109c6cfcb7d1d5776
-function! Cscope(option, query)
-  let color = '{ x = $1; $1 = ""; z = $3; $3 = ""; printf "\033[34m%s\033[0m:\033[31m%s\033[0m\011\033[37m%s\033[0m\n", x,z,$0; }'
-  let opts = {
-  \ 'source':  "cscope -dL" . a:option . " " . a:query . " | awk '" . color . "'",
-  \ 'options': ['--ansi', '--prompt', '> ',
-  \             '--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all',
-  \             '--color', 'fg:188,fg+:222,bg+:#3a3a3a,hl+:104'],
-  \ 'down': '40%'
-  \ }
-  function! opts.sink(lines)
-    let data = split(a:lines)
-    let file = split(data[0], ":")
-    execute 'e ' . '+' . file[1] . ' ' . file[0]
-  endfunction
-  call fzf#run(opts)
-endfunction
-
-nnoremap <silent> <Leader>cc :call Cscope('1', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>cd :call Cscope('2', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>ce :call Cscope('3', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>cf :call Cscope('4', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>cg :call Cscope('6', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>ci :call Cscope('7', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>cs :call Cscope('8', expand('<cword>'))<CR>
-nnoremap <silent> <Leader>ct :call Cscope('9', expand('<cword>'))<CR>
-
-nmap <C-]> <Plug>(fzf_tags)
