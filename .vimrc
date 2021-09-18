@@ -67,7 +67,7 @@ set shiftwidth=2
 set expandtab
 
 " Preserve padding of at least 5 lines between cursor and top or bottom of the window
-set scrolloff=1
+set scrolloff=5
 
 " Haven't been bitten by not having an undo file yet...and they're really annoying.
 set noundofile
