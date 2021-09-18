@@ -121,6 +121,8 @@ map Q gq
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 
+" Open fzf with preview on the top and consuming 60% of the vertical window
+" space
 let g:fzf_preview_window = ['up:60%']
 
 " Open files to last cursor position
