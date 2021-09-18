@@ -111,6 +111,8 @@ nmap <leader><TAB> :bprevious<CR>
 nmap <leader>q :bnext<CR>
 "   Search for word under cursor
 nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
+"   Search in fzf for tag under cursor
+nmap <C-]> <Plug>(fzf_tags)
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
