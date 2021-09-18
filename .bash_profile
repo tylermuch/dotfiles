@@ -29,7 +29,7 @@ alias cls="clear; printf '\e[3J'; clear"
 export GIT_EDITOR='vim'
 export EDITOR='vim'
 
-if [[ $(uname -a) == "Darwin" ]]; then
+if [[ $(uname) == "Darwin" ]]; then
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export CLICOLOR=1
 else
