@@ -154,3 +154,5 @@ nnoremap <silent> <Leader>cg :call Cscope('6', expand('<cword>'))<CR>
 nnoremap <silent> <Leader>ci :call Cscope('7', expand('<cword>'))<CR>
 nnoremap <silent> <Leader>cs :call Cscope('8', expand('<cword>'))<CR>
 nnoremap <silent> <Leader>ct :call Cscope('9', expand('<cword>'))<CR>
+
+nmap <C-]> <Plug>(fzf_tags)

@@ -69,7 +69,8 @@ repos=(
     #     cscope tags
     #
     #     Ctrl-\ s    View references of symbol
-    gnattishness/cscope_maps
+    # conflicts with fzf-tags
+    # gnattishness/cscope_maps
 
     # goyo
     #     hide all vim window elements
@@ -114,6 +115,12 @@ repos=(
     # vim-gutentags
     #     (re)generate tag files automatically
     ludovicchabant/vim-gutentags
+
+    # fzf-tags
+    #     search for ctags using fzf
+    #     :FZFTags
+    #     :FZFTselect
+    zackhsi/fzf-tags
 )
 
 set -e
