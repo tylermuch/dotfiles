@@ -115,6 +115,8 @@ nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
 nmap <C-]> <Plug>(fzf_tags)
 "   fzf tags in current buffer
 nmap <leader>t :BTags<CR>
+"   fzf open file history
+nmap <leader>h :History<CR>
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
