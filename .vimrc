@@ -113,6 +113,8 @@ nmap <leader>q :bnext<CR>
 nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
 "   Search in fzf for tag under cursor
 nmap <C-]> <Plug>(fzf_tags)
+"   fzf tags in current buffer
+nmap <leader>t :BTags<CR>
 
 " Don't use Ex mode, use Q for formatting line width
 map Q gq
