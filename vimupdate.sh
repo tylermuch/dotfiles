@@ -111,6 +111,8 @@ repos=(
     # vim-gutentags
     #     (re)generate tag files automatically
     ludovicchabant/vim-gutentags
+
+    pseewald/anyfold
 )
 
 set -e

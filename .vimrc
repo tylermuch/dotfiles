@@ -90,6 +90,21 @@ set term=screen-256color
 set listchars=tab:>-
 set list
 
+" Folding!
+"   zo = open fold
+"   zc = close fold
+"   za = toggle fold
+"   zd = delete fold
+"
+"   set foldmethod=manual   (default)
+"     zf = create fold
+"
+"   set foldmethod=indent
+"     *only works for indentation in multiples of tabstop
+"
+set foldcolumn=2
+nnoremap <space> za
+
 " Normal mode keybinds
 "   Toggle highlighting tabs
 nmap <F5> :set list!<CR>
@@ -129,10 +144,15 @@ let &t_EI.="\e[1 q"
 " space
 let g:fzf_preview_window = ['up:60%']
 
+let g:gutentags_ctags_executable = "/opt/homebrew/bin/ctags"
+
+let g:tagbar_ctags_bin = "/opt/homebrew/bin/ctags"
+
 " Open files to last cursor position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   au BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
   au VimLeave * call system("tmux setw automatic-rename")
+  " au Filetype * AnyFoldActivate
 endif
 

@@ -15,7 +15,3 @@ window:
     lines: 24
 scrolling:
   history: 100000
-mouse:
-  url:
-    launcher:
-      program: open

@@ -8,6 +8,7 @@ export PATH=$PATH:/usr/libexec
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin/git-fuzzy/bin
+export PATH=$PATH:/opt/homebrew/bin
 
 ################################################
 # Aliases
@@ -103,3 +104,4 @@ if [ -f ~/.secrets ]; then
     . ~/.secrets
 fi
 
+. "$HOME/.cargo/env"

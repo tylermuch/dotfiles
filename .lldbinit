@@ -1,3 +1,4 @@
 settings set stop-line-count-before 16
 settings set stop-line-count-after 16
 settings set target.load-script-from-symbol-file true
+settings set target.process.virtual-addressable-bits 49
