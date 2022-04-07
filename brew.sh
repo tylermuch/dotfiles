@@ -39,5 +39,10 @@ ln -sf "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" $HOME
 # https://github.com/aykamko/tag
 brew tap aykamko/tag-ag
 brew install tag-ag
+#pushd /tmp
+# If this fails, use the following
+#wget https://go.dev/dl/go1.18.darwin-amd64.pkg
+#sudo installer -pkg go1.18.darwin-amd64.pkg -target /
+#popd
 
 brew cleanup
