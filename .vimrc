@@ -145,6 +145,7 @@ let &t_EI.="\e[1 q"
 let g:fzf_preview_window = ['up:60%']
 
 let g:gutentags_ctags_executable = "/opt/homebrew/bin/ctags"
+let g:gutentags_resolve_symlinks = 0
 
 let g:tagbar_ctags_bin = "/opt/homebrew/bin/ctags"
 
