@@ -22,3 +22,6 @@ for i in ${FILES_TO_SYMLINK[@]}; do
     echo "Symlinking $src to $dest"
     ln -sf $src $dest
 done
+
+mkdir $HOME/.config
+ls -sf $DIR/nvim $HOME/.config/nvim
