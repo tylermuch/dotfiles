@@ -84,11 +84,18 @@ nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
 nmap <leader>g :Telescope live_grep<CR>
 "   Search vars, etc.
 nmap <leader>t :Telescope treesitter<CR>
+"   Toggle Vista (tagbar)
+nmap <F8> :Vista!!<CR>
+
+let g:vista_default_executive = 'nvim_lsp'
+let g:vista_fzf_preview = ['right:50%']
 
 " Open files to last cursor position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   au BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
-  au VimLeave * call system("tmux setw automatic-rename")
+  au VimLeave * call system("tmux rename-window zsh")
+  " Close vista pane if it's the only thing left open
+  au BufEnter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif
   " au Filetype * AnyFoldActivate
 endif
