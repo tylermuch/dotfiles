@@ -56,17 +56,21 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+-- Ugh, telescope kinda sucks
+
 require('telescope').setup {
   defaults = {
     previewer = true,
     layout_strategy = 'vertical',
     layout_config = {
       width = 0.9,
-      height = 0.9,
+      height = 0.8,
+      -- prompt_position = 'top',
+      mirror = true,
     },
-    path_display = {"smart"},
+    -- path_display = {"smart"},
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-  }
+  },
 }

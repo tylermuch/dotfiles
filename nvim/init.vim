@@ -75,14 +75,15 @@ nmap <leader>; :Files<CR>
 "   Search file contents in cwd using rg+fzf
 nmap <leader>f :Ag<SPACE>
 "   Search current buffer contents using rg+fzf
-nmap <leader>l :Lines<CR>
+nmap <leader>l :Telescope current_buffer_fuzzy_find<CR>
 "   Search open buffers using fzf
 nmap <leader>b :Buffers<CR>
 "   Search for word under cursor
 nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
-
-" Live grep
+"   Live-search in cwd using telescope
 nmap <leader>g :Telescope live_grep<CR>
+"   Search vars, etc.
+nmap <leader>t :Telescope treesitter<CR>
 
 " Open files to last cursor position
 if has("autocmd")
