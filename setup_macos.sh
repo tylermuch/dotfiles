@@ -5,8 +5,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Installing homebrew..."
 $DIR/brew.sh
 
-echo "Setting up vim..."
-$DIR/vimupdate.sh
+# echo "Setting up vim..."
+# $DIR/vimupdate.sh
+echo "Setting up neovim..."
+$DIR/nvimupdate.sh
 
 echo "Setting up tmux..."
 $DIR/tmuxsetup.sh

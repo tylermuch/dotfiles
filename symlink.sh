@@ -23,5 +23,5 @@ for i in ${FILES_TO_SYMLINK[@]}; do
     ln -sf $src $dest
 done
 
-mkdir $HOME/.config
-ls -sf $DIR/nvim $HOME/.config/nvim
+mkdir -p $HOME/.config
+ln -sf $DIR/nvim $HOME/.config/nvim
