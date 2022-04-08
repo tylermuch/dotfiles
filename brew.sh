@@ -24,7 +24,8 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              the_silver_searcher         `# Faster grep. Used for :Ag in vim until I figure out :Rg...` \
              bat                         `# Better 'cat'` \
              git-delta                   `# Better git diffs` \
-             exa                         `# Better 'ls'`
+             exa                         `# Better 'ls'` \
+             neovim                      `# Neovim`
 
 brew cask install --appdir="/Applications" caffeine      \
                                            alfred        \
