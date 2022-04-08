@@ -90,6 +90,9 @@ nmap <F8> :Vista!!<CR>
 let g:vista_default_executive = 'nvim_lsp'
 let g:vista_fzf_preview = ['right:50%']
 
+" Enable autocompletion by default...I may regret this...
+let g:coq_settings = { 'auto_start': 'shut-up' }
+
 " Open files to last cursor position
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
