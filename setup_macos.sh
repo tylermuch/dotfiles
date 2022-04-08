@@ -5,8 +5,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Installing homebrew..."
 $DIR/brew.sh
 
-# echo "Setting up vim..."
-# $DIR/vimupdate.sh
+echo "Symlinking dotfiles..."
+$DIR/symlink.sh
+
 echo "Setting up neovim..."
 $DIR/nvimupdate.sh
 
@@ -15,9 +16,6 @@ $DIR/tmuxsetup.sh
 
 echo "Installing zsh..."
 $DIR/zshsetup.sh
-
-echo "Symlinking dotfiles..."
-$DIR/symlink.sh
 
 echo "Setting macOS user defaults..."
 defaults write com.apple.finder ShowPathBar -bool true
