@@ -28,8 +28,8 @@ alias vim='nvim'
 ################################################
 # Misc.
 ################################################
-export GIT_EDITOR='vim'
-export EDITOR='vim'
+export GIT_EDITOR='nvim'
+export EDITOR='nvim'
 
 if [[ $(uname) == "Darwin" ]]; then
 export LSCOLORS=GxFxCxDxBxegedabagaced
