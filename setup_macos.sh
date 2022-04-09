@@ -2,11 +2,11 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-echo "Installing homebrew..."
-$DIR/brew.sh
-
 echo "Symlinking dotfiles..."
 $DIR/symlink.sh
+
+echo "Installing homebrew..."
+$DIR/brew.sh
 
 echo "Setting up neovim..."
 $DIR/nvimupdate.sh
