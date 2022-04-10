@@ -47,7 +47,7 @@ for _, lsp in ipairs(servers) do
 end
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
 
   sync_install = false,
 
