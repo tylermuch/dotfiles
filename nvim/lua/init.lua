@@ -36,7 +36,8 @@ end
 
 local servers = {
   "clangd",
-  "pyright"
+  "pyright",
+  "rust_analyzer"
 }
 
 for _, lsp in ipairs(servers) do
