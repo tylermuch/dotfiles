@@ -1,7 +1,7 @@
 local nvim_lsp = require "lspconfig"
 local lsp_status = require("lsp-status")
 
-local on_attach = function(client)
+local on_attach = function(client, bufnr)
   lsp_status.register_progress()
   lsp_status.config(
     {
