@@ -46,6 +46,7 @@ set scrolloff=5
 
 " Haven't been bitten by not having an undo file yet...and they're really annoying.
 set noundofile
+set noswapfile
 
 " Use vertical cursor in insert mode
 let &t_SI.="\e[5 q"
