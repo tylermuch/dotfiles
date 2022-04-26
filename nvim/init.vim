@@ -38,6 +38,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Highlight line that cursor is on
+set cursorline
+
 " Preserve padding of at least 5 lines between cursor and top or bottom of the window
 set scrolloff=5
 
