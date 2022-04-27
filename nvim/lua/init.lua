@@ -48,7 +48,7 @@ for _, lsp in ipairs(servers) do
 end
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+  ensure_installed = {"c", "cpp", "cmake", "devicetree", "json", "json5", "lua", "make", "markdown", "python", "regex", "rust", "vim", "yaml"},
 
   sync_install = false,
 
