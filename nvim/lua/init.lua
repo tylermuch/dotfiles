@@ -1,6 +1,8 @@
 local nvim_lsp = require "lspconfig"
 local lsp_status = require("lsp-status")
 
+require('lualine').setup()
+
 local on_attach = function(client, bufnr)
   lsp_status.register_progress()
   lsp_status.config(
