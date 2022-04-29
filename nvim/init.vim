@@ -2,7 +2,6 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'airblade/vim-gitgutter'
@@ -10,13 +9,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 lua require('init')
@@ -90,11 +88,13 @@ nmap <leader>t :Telescope treesitter<CR>
 "   Toggle Vista (tagbar)
 nmap <F8> :Vista!!<CR>
 
+" Use Tab to jump to next snippet placeholder. This is useful for
+" autocompleted functions
+let g:coc_snippet_next = '<tab>'
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 let g:vista_default_executive = 'nvim_lsp'
 let g:vista_fzf_preview = ['right:50%']
-
-" Enable autocompletion by default...I may regret this...
-let g:coq_settings = { 'auto_start': 'shut-up' }
 
 " Open files to last cursor position
 if has("autocmd")
