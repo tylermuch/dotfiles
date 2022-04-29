@@ -1,28 +1,6 @@
 local nvim_lsp = require "lspconfig"
 local lsp_status = require("lsp-status")
 local coq = require "coq"
-local cmp = require'cmp'
-
-cmp.setup({
-  mapping = {
-    ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-    ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
-    ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
-    ["<CR>"] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
-  },
-  sources = cmp.config.sources({
-    { name = "treesitter" },
-    { name = "nvim_lsp" },
-  }, {
-    { name = "buffer" },
-  })
-})
-
-local caps = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require('lualine').setup {
   sections = {
@@ -61,7 +39,7 @@ local on_attach = function(client, bufnr)
     }
   )
 
-  require'completion'.on_attach(client)
+  require "completion".on_attach(client)
 
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
