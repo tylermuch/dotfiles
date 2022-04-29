@@ -1,5 +1,6 @@
 local nvim_lsp = require "lspconfig"
 local lsp_status = require("lsp-status")
+local coq = require "coq"
 
 require('lualine').setup {
   sections = {
@@ -68,6 +69,10 @@ for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
     capabilities = lsp_status.capabilities
+  }
+
+  nvim_lsp[lsp].setup {
+    coq.lsp_ensure_capablities
   }
 end
 
