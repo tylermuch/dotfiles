@@ -103,5 +103,4 @@ if has("autocmd")
   au VimLeave * call system("tmux rename-window zsh")
   " Close vista pane if it's the only thing left open
   au BufEnter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif
-  " au Filetype * AnyFoldActivate
 endif
