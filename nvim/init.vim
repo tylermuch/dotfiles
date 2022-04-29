@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/completion-treesitter'
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'nvim-lua/plenary.nvim'
@@ -17,9 +18,13 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'ray-x/cmp-treesitter'
 call plug#end()
-
-lua require('init')
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -94,7 +99,7 @@ let g:vista_default_executive = 'nvim_lsp'
 let g:vista_fzf_preview = ['right:50%']
 
 " Enable autocompletion by default...I may regret this...
-let g:coq_settings = { 'auto_start': 'shut-up' }
+" let g:coq_settings = { 'auto_start': 'shut-up' }
 
 " Open files to last cursor position
 if has("autocmd")
@@ -104,4 +109,10 @@ if has("autocmd")
   " Close vista pane if it's the only thing left open
   au BufEnter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif
   " au Filetype * AnyFoldActivate
+  " au BufEnter * lua require'completion'.on_attach()
 endif
+
+" set completeopt=menu,menuone,noselect
+
+" Load lua init
+lua require('init')
