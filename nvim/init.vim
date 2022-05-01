@@ -15,6 +15,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-commentary'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rrethy/vim-illuminate'
 call plug#end()
 
 lua require('init')
