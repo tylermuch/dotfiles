@@ -98,3 +98,7 @@ require('telescope').setup {
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
   },
 }
+
+require('highlight_current_n').setup({
+  highlight_group = "IncSearch"
+})

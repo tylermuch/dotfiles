@@ -16,6 +16,7 @@ Plug 'tpope/vim-commentary'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rrethy/vim-illuminate'
+Plug 'rktjmp/highlight-current-n.nvim'
 call plug#end()
 
 lua require('init')
@@ -89,6 +90,9 @@ nmap <leader>t :Telescope treesitter<CR>
 "   Toggle Vista (tagbar)
 nmap <F8> :Vista!!<CR>
 
+nmap n <Plug>(highlight-current-n-n)
+nmap N <Plug>(highlight-current-n-N)
+
 " Use Tab to jump to next snippet placeholder. This is useful for
 " autocompleted functions
 let g:coc_snippet_next = '<tab>'
@@ -105,3 +109,10 @@ if has("autocmd")
   " Close vista pane if it's the only thing left open
   au BufEnter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif
 endif
+
+augroup ClearSearchHL
+  autocmd!
+  autocmd CmdlineEnter /,\? set hlsearch
+  autocmd CmdlineLeave /,\? set nohlsearch
+  autocmd CmdlineLeave /,\? lua require('highlight_current_n')['/,?']()
+augroup END
