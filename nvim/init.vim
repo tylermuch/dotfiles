@@ -17,6 +17,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rrethy/vim-illuminate'
 Plug 'rktjmp/highlight-current-n.nvim'
+Plug 'danilamihailov/beacon.nvim'
 call plug#end()
 
 lua require('init')
