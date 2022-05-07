@@ -7,6 +7,7 @@ Plug 'nvim-lua/diagnostic-nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
