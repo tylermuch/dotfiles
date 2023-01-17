@@ -2,7 +2,7 @@
 
 if [[ $(command -v brew) == "" ]]; then
     echo "Downloading and installing homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 brew install ssh-copy-id                 `# Copy ssh public key to remote system` \
