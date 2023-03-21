@@ -26,7 +26,8 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              git-delta                   `# Better git diffs` \
              exa                         `# Better 'ls'` \
              neovim                      `# Neovim` \
-             nodejs                      `# For neovim plugins
+             nodejs                      `# For neovim plugins \
+             difftastic                  `# Better diff
 
 brew cask install --appdir="/Applications" caffeine      \
                                            alfred        \

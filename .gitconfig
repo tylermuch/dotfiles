@@ -18,6 +18,7 @@
     autoSetupRebase = always
 [diff]
     tool = bc3
+	  external = difft
 [difftool]
     prompt = false
 [merge]
