@@ -102,3 +102,5 @@ require('telescope').setup {
 require('highlight_current_n').setup({
   highlight_group = "IncSearch"
 })
+
+require('neoclip').setup()

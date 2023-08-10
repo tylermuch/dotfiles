@@ -94,7 +94,7 @@ nmap <F8> :Vista!!<CR>
 nmap n <Plug>(highlight-current-n-n)
 nmap N <Plug>(highlight-current-n-N)
 
-nmap <leader>y :lua require('neoclip.fzf')()
+nmap <leader>y :lua require('neoclip.fzf')()<CR>
 
 " From: https://github.com/neoclide/coc.nvim
 " Required for coc.nvim popup completion to work
