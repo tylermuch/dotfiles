@@ -3,3 +3,5 @@ tags
 tags.lock
 tags.temp
 cscope.out
+.cache
+compile_commands.json
