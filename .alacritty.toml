@@ -1,0 +1,21 @@
+[font]
+size = 13.0
+
+  [font.normal]
+  family = "RobotoMono Nerd Font Mono"
+  style = "Medium"
+
+  [font.bold]
+  family = "RobotoMono Nerd Font Mono"
+  style = "Bold"
+
+  [font.italic]
+  family = "RobotoMono Nerd Font Mono"
+  style = "Italic"
+
+[window.dimensions]
+columns = 80
+lines = 24
+
+[scrolling]
+history = 100_000

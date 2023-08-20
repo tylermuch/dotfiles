@@ -12,6 +12,7 @@ declare -a FILES_TO_SYMLINK=(
     '.hushlogin'
     '.lldbinit'
     '.gitignore_global'
+    '.alacritty.toml'
     '.alacritty.yml'
 )
 
