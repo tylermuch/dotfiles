@@ -1,5 +1,8 @@
 [alias]
+    # Stash untracked files too
     sta = stash --all
+    # Track change through line and file movement
+    bla = blame -w -C -C -C
     fs = fuzzy status
     fd = fuzzy diff
     fl = fuzzy log
@@ -17,16 +20,6 @@
 [branch]
     autoSetupMerge = always
     autoSetupRebase = always
-[diff]
-    tool = bc3
-	  external = difft
-[difftool]
-    prompt = false
-[merge]
-    tool = smerge
-[mergetool.smerge]
-    cmd = 'smerge mergetool "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"'
-    trustExitCode = true
 [core]
 	excludesfile = /Users/tmuch/.gitignore_global
 [init]
