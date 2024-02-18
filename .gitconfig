@@ -31,3 +31,9 @@
 	excludesfile = /Users/tmuch/.gitignore_global
 [init]
 	defaultBranch = main
+
+# REuse REcorded REsolution
+# Remember merge conflict resolutions and automatically fix when seen again
+# Useful when rebasing so don't have to fix the same thing over and over
+[rerere]
+	enabled = true
