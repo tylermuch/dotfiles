@@ -22,6 +22,7 @@
 [branch]
     autoSetupMerge = always
     autoSetupRebase = always
+    sort = -committerdate
 [core]
 	excludesfile = /Users/tmuch/.gitignore_global
 [init]
