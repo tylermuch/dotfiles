@@ -1,4 +1,5 @@
 [alias]
+    sta = stash --all
     fs = fuzzy status
     fd = fuzzy diff
     fl = fuzzy log
