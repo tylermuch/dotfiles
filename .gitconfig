@@ -3,6 +3,8 @@
     sta = stash --all
     # Track change through line and file movement
     bla = blame -w -C -C -C
+    # word diff
+    wdiff = diff --word-diff
     fs = fuzzy status
     fd = fuzzy diff
     fl = fuzzy log
