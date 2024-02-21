@@ -29,3 +29,14 @@
 # Useful when rebasing so don't have to fix the same thing over and over
 [rerere]
 	enabled = true
+
+# For work-related and other private configuration.
+# For example, .gitconfig.private can contain the following:
+# [includeIf "gitdir:~/private_src"]
+#   path = ~/.gitconfig.private.internal
+#
+#
+# and .gitconfig.private.internal can have any configuration that
+# you want only to apply to repos in ~/private_src
+[include]
+  path = ~/.gitconfig.private
