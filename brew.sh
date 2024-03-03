@@ -10,7 +10,6 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              tig                         `# Terminal based git browser` \
              wget                        `# Wget` \
              watch                       `# Periodically execute shell command` \
-             ctags                       `# Generate source code tags for quick navigation` \
              ripgrep                     `# Much faster 'grep'` \
              tree                        `# Pretty print filesystem trees` \
              fzf                         `# Fuzzy file searcher` \
@@ -23,7 +22,6 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              fd                          `# Faster/prettier 'find'` \
              the_silver_searcher         `# Faster grep. Used for :Ag in vim until I figure out :Rg...` \
              bat                         `# Better 'cat'` \
-             git-delta                   `# Better git diffs` \
              exa                         `# Better 'ls'` \
              neovim                      `# Neovim` \
              nodejs                      `# For neovim plugins` \
