@@ -27,7 +27,9 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              exa                         `# Better 'ls'` \
              neovim                      `# Neovim` \
              nodejs                      `# For neovim plugins` \
-             pyenv                       `# Multiple python installations`
+             pyenv                       `# Multiple python installations` \
+             coreutils                   `# GNU coreutils. Mostly for 'timeout'` \
+             pv                          `# Monitor progress of data through a pipe`
 
 brew cask install --appdir="/Applications" caffeine      \
                                            alfred        \
