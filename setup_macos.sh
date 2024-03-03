@@ -45,3 +45,7 @@ defaults write com.apple.AMPDeviceDiscoveryAgent reveal-devices 0
 # Install git-fuzzy
 mkdir -p ~/bin
 git clone https://github.com/bigH/git-fuzzy.git ~/bin/git-fuzzy
+
+sudo mkdir /usr/local/opt
+sudo chown -R $USER /usr/local/opt
+git clone https://github.com/junegunn/fzf.git /usr/local/opt/fzf
