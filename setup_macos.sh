@@ -17,6 +17,9 @@ $DIR/tmuxsetup.sh
 echo "Installing zsh..."
 $DIR/zshsetup.sh
 
+echo "Setting up cargo..."
+$DIR/cargosetup.sh
+
 echo "Setting macOS user defaults..."
 defaults write com.apple.finder ShowPathBar -bool true
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"

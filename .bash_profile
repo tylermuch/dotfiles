@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/Library/Python/3.8/bin
 # Aliases
 ################################################
 alias mkdir='mkdir -pv'
-alias ls='exa -lahb'
+alias ls='eza -lahb'
 alias less='less -FSRXc'
 alias gitp='git --no-pager'
 alias diff='colordiff'
