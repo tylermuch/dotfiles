@@ -2,5 +2,5 @@ settings set stop-line-count-before 16
 settings set stop-line-count-after 16
 settings set target.load-script-from-symbol-file true
 settings set target.process.virtual-addressable-bits 49
-set set target.max-string-summary-length 10000
-setting set escape-non-printables false
+settings set target.max-string-summary-length 32768
+settings set escape-non-printables false
