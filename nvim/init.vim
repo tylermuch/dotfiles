@@ -65,10 +65,7 @@ set rtp+=/usr/local/opt/fzf
 
 " Open fzf with preview on the top and consuming 60% of the vertical window
 " space
-let g:fzf_preview_window = ['right:60%']
-
-" Display fzf in the bottom 40% of the screen
-let g:fzf_layout = { 'down':  '40%'}
+let g:fzf_preview_window = ['up:60%']
 
 syntax enable
 colorscheme jellybeans
