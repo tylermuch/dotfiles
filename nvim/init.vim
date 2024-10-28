@@ -22,6 +22,7 @@ Plug 'rktjmp/highlight-current-n.nvim'
 Plug 'danilamihailov/beacon.nvim'
 Plug 'ibhagwan/fzf-lua'
 Plug 'AckslD/nvim-neoclip.lua'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 lua require('init')
@@ -68,7 +69,7 @@ set rtp+=/usr/local/opt/fzf
 let g:fzf_preview_window = ['up:60%']
 
 syntax enable
-colorscheme jellybeans
+" colorscheme jellybeans
 
 " Enable the mouse
 if has('mouse')
@@ -138,3 +139,6 @@ augroup ClearSearchHL
   autocmd CmdlineLeave /,\? set nohlsearch
   autocmd CmdlineLeave /,\? lua require('highlight_current_n')['/,?']()
 augroup END
+
+set background=light
+autocmd VimEnter * colorscheme PaperColor
