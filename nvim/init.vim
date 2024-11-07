@@ -140,5 +140,4 @@ augroup ClearSearchHL
   autocmd CmdlineLeave /,\? lua require('highlight_current_n')['/,?']()
 augroup END
 
-set background=light
 autocmd VimEnter * colorscheme PaperColor
