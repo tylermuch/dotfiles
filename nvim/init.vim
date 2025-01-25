@@ -14,7 +14,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'liuchengxu/vista.vim'
-Plug 'tpope/vim-commentary'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rrethy/vim-illuminate'
