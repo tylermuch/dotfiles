@@ -8,7 +8,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
-Plug 'nanotech/jellybeans.vim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
@@ -21,7 +20,6 @@ Plug 'rktjmp/highlight-current-n.nvim'
 Plug 'danilamihailov/beacon.nvim'
 Plug 'ibhagwan/fzf-lua'
 Plug 'AckslD/nvim-neoclip.lua'
-Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 lua require('init')
@@ -139,4 +137,4 @@ augroup ClearSearchHL
   autocmd CmdlineLeave /,\? lua require('highlight_current_n')['/,?']()
 augroup END
 
-autocmd VimEnter * colorscheme PaperColor
+autocmd VimEnter * colorscheme kanagawa-wave
