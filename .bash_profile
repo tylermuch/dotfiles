@@ -10,6 +10,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin/git-fuzzy/bin
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:$HOME/Library/Python/3.8/bin
+export PATH=$PATH:$HOME/go/bin
 
 ################################################
 # Aliases
