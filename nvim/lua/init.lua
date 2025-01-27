@@ -38,6 +38,8 @@ local on_attach = function(client, bufnr)
     }
   )
 
+  vim.diagnostic.config({ virtual_text = false })
+
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
@@ -79,6 +81,9 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
+
+require("tiny-inline-diagnostic").setup({
+})
 
 -- Ugh, telescope kinda sucks
 

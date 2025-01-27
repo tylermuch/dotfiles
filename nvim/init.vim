@@ -19,6 +19,7 @@ Plug 'rrethy/vim-illuminate'
 Plug 'rktjmp/highlight-current-n.nvim'
 Plug 'ibhagwan/fzf-lua'
 Plug 'AckslD/nvim-neoclip.lua'
+Plug 'rachartier/tiny-inline-diagnostic.nvim'
 call plug#end()
 
 lua require('init')
