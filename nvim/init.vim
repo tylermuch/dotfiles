@@ -83,12 +83,12 @@ nmap <leader>l :Telescope current_buffer_fuzzy_find<CR>
 nmap <leader>b :Buffers<CR>
 "   Search for word under cursor
 nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
-"   Live-search in cwd using telescope
-nmap <leader>g :Telescope live_grep<CR>
 "   Search vars, etc.
 nmap <leader>t :Telescope treesitter<CR>
 "   Toggle Vista (tagbar)
 nmap <F8> :Vista!!<CR>
+"   Toggle gitgutter lines
+nmap <leader>g :GitGutterLineHighlightsToggle \| GitGutterLineNrHighlightsToggle<CR>
 
 nmap n <Plug>(highlight-current-n-n)
 nmap N <Plug>(highlight-current-n-N)
