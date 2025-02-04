@@ -9,18 +9,21 @@ require('lualine').setup {
       {
         'diagnostics',
         sources = { 'nvim_diagnostic' },
-        sections = { 'error', 'warn', 'info', 'hint' },
+        sections = { 'error', 'warn', 'info' },
         diagnostics_color = {
           error = 'DiagnosticError',
           warn  = 'DiagnosticWarn',
           info  = 'DiagnosticInfo',
           hint  = 'DiagnosticHint',
         },
-        symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+        symbols = { error = 'E', warn = 'W', info = 'I'},
         colored = true,
         update_in_insert = false,
         always_visible = false,
       },
+    },
+    lualine_a = {
+      "require'lsp-status'.status()"
     }
   }
 }
@@ -29,12 +32,13 @@ local on_attach = function(client, bufnr)
   lsp_status.register_progress()
   lsp_status.config(
     {
-      status_symbols = "LSP ",
+      status_symbol = "LSP ",
       indicator_errors = "E",
       indicator_warning = "W",
       indicator_info = "I",
       indicator_hint = "H",
-      indicator_ok = "ok"
+      indicator_ok = "ok",
+      diagnostics = false,
     }
   )
 
