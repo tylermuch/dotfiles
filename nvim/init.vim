@@ -66,7 +66,7 @@ set rtp+=/usr/local/opt/fzf
 let g:fzf_preview_window = ['up:60%']
 
 syntax enable
-" colorscheme jellybeans
+colorscheme kanagawa-wave
 
 " Enable the mouse
 if has('mouse')
@@ -136,5 +136,3 @@ augroup ClearSearchHL
   autocmd CmdlineLeave /,\? set nohlsearch
   autocmd CmdlineLeave /,\? lua require('highlight_current_n')['/,?']()
 augroup END
-
-autocmd VimEnter * colorscheme kanagawa-wave
