@@ -113,6 +113,7 @@ require('highlight_current_n').setup({
 })
 
 require('neoclip').setup()
+require("toggleterm").setup()
 require('ufo').setup()
 
 -- nvim-ufo plugin configuration

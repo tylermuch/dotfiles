@@ -25,6 +25,7 @@ Plug 'AckslD/nvim-neoclip.lua'
 Plug 'rachartier/tiny-inline-diagnostic.nvim'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'kevinhwang91/promise-async'
+Plug 'akinsho/toggleterm.nvim'
 call plug#end()
 
 lua require('init')
@@ -88,12 +89,12 @@ nmap <leader>l :Telescope current_buffer_fuzzy_find<CR>
 nmap <leader>b :Buffers<CR>
 "   Search for word under cursor
 nmap <leader>s :Ag<SPACE><c-r>=expand("<cword>")<cr><CR>
-"   Search vars, etc.
-nmap <leader>t :Telescope treesitter<CR>
 "   Toggle Vista (tagbar)
 nmap <F8> :Vista!!<CR>
 "   Toggle gitgutter lines
 nmap <leader>g :GitGutterLineHighlightsToggle \| GitGutterLineNrHighlightsToggle<CR>
+"   toggleterm plugin
+nmap <leader>t :ToggleTerm<CR>
 
 nmap n <Plug>(highlight-current-n-n)
 nmap N <Plug>(highlight-current-n-N)
