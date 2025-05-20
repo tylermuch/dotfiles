@@ -2,7 +2,10 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/lsp-status.nvim'
+" Use patch-1 branch which contains fix for deprected function usage, to
+" silence the warning upon launching vim. This project hasn't been updated in
+" 4 years and it doesn't look like the maintainer is checking pull requests.
+Plug 'milanfusco/lsp-status.nvim', {'branch': 'patch-1'}
 Plug 'nvim-lua/diagnostic-nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
