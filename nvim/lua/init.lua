@@ -113,3 +113,14 @@ require('highlight_current_n').setup({
 })
 
 require('neoclip').setup()
+require('ufo').setup()
+
+-- nvim-ufo plugin configuration
+-- https://github.com/kevinhwang91/nvim-ufo
+vim.o.foldcolumn = '2' -- How many columns of fold information to show in the left sidebar (left of the line numbers)
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)

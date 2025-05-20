@@ -20,6 +20,8 @@ Plug 'rktjmp/highlight-current-n.nvim'
 Plug 'ibhagwan/fzf-lua'
 Plug 'AckslD/nvim-neoclip.lua'
 Plug 'rachartier/tiny-inline-diagnostic.nvim'
+Plug 'kevinhwang91/nvim-ufo'
+Plug 'kevinhwang91/promise-async'
 call plug#end()
 
 lua require('init')
