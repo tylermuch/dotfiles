@@ -22,7 +22,7 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              fd                          `# Faster/prettier 'find'` \
              the_silver_searcher         `# Faster grep. Used for :Ag in vim until I figure out :Rg...` \
              bat                         `# Better 'cat'` \
-             exa                         `# Better 'ls'` \
+             eza                         `# Better 'ls'` \
              neovim                      `# Neovim` \
              nodejs                      `# For neovim plugins` \
              pyenv                       `# Multiple python installations` \
