@@ -4,3 +4,5 @@ settings set target.load-script-from-symbol-file true
 settings set target.process.virtual-addressable-bits 49
 settings set target.max-string-summary-length 32768
 settings set escape-non-printables false
+settings set stop-disassembly-display always
+settings set stop-disassembly-count 3
