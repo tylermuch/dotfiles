@@ -26,6 +26,7 @@ alias which='which -a'
 alias tmux='tmux -2'
 alias cls="clear; printf '\e[3J'; clear"
 alias vim='nvim'
+alias clearall="printf '\033c'"
 
 ################################################
 # Misc.
