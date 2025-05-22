@@ -29,12 +29,6 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              coreutils                   `# GNU coreutils. Mostly for 'timeout'` \
              pv                          `# Monitor progress of data through a pipe`
 
-brew cask install --appdir="/Applications" caffeine      \
-                                           alfred        \
-                                           sublime-text  \
-                                           sublime-merge \
-                                           contexts
-
 mkdir ~/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
 ln -sf "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" $HOME/bin/smerge
