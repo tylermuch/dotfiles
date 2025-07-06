@@ -32,8 +32,8 @@
 	enabled = true
 
 # For work-related and other private configuration.
-# For example, .gitconfig.private can contain the following:
-# [includeIf "gitdir:~/private_src"]
+# For example, .gitconfig.private can contain the following (note the trailing slash):
+# [includeIf "gitdir:~/private_src/"]
 #   path = ~/.gitconfig.private.internal
 #
 #
