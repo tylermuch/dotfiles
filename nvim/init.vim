@@ -26,6 +26,9 @@ Plug 'rachartier/tiny-inline-diagnostic.nvim'
 Plug 'kevinhwang91/nvim-ufo'
 Plug 'kevinhwang91/promise-async'
 Plug 'akinsho/toggleterm.nvim'
+" For buffer tabs
+Plug 'romgrk/barbar.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 call plug#end()
 
 lua require('init')
