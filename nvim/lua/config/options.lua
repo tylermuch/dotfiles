@@ -6,3 +6,5 @@ vim.g.autoformat = false
 vim.opt.relativenumber = false
 vim.opt.wrap = true
 vim.opt.clipboard = ""
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
