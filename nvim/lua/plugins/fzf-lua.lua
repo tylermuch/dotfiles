@@ -1,11 +1,16 @@
 return {
   "ibhagwan/fzf-lua",
-  opts = function(_, opts)
-    opts.winopts = {
+  opts = {
+    winopts = {
       preview = {
-        vertical = "up:65%",
+        vertical = "up:75%",
         layout = "vertical",
       },
-    }
-  end,
+    },
+    files = {
+      actions = {
+        ["default"] = require("fzf-lua.actions").file_edit
+      },
+    },
+  },
 }
