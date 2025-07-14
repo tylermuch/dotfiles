@@ -5,3 +5,4 @@ vim.g.lazyvim_picker = "fzf"
 vim.g.autoformat = false
 vim.opt.relativenumber = false
 vim.opt.wrap = true
+vim.opt.clipboard = ""
