@@ -4,6 +4,7 @@ return {
   opts = {
     modes = {
       symbols = {
+        focus = true,
         win = {
           type = "split",
           relative = "win",
