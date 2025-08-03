@@ -20,8 +20,7 @@ zstyle ':vcs_info:*' enable git
 
 PS1='%F{119}%~
 > %F{reset}'
-RPS1='%F{244}[%D{%m/%f/%y} %D{%L:%M:%S}]%F{reset} %F{145}$(__ssh_hostname_prompt) %F{119}${vcs_info_msg_0_}%F{145}
-%F{reset}'
+RPS1='%F{244}[%D{%-m/%-f/%y} %D{%L:%M:%S} $(date +%Z)]%F{reset} %F{145}$(__ssh_hostname_prompt) %F{119}${vcs_info_msg_0_}%F{145}'
 
 ################################################
 # macOS specific stuff
