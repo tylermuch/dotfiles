@@ -52,3 +52,10 @@ git clone https://github.com/bigH/git-fuzzy.git ~/bin/git-fuzzy
 sudo mkdir /usr/local/opt
 sudo chown -R $USER /usr/local/opt
 git clone https://github.com/junegunn/fzf.git /usr/local/opt/fzf
+
+# clangd has issues with certain versions of the toolchain.
+# This prevents clangd from breaking and preventing autocomplete in neovim
+cat >~/Library/Preferences/clangd/config.yaml <<EOL
+CompileFlags:
+    Remove: [-mcpu=*]
+EOL
