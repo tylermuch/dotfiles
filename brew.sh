@@ -34,8 +34,8 @@ ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bi
 ln -sf "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" $HOME/bin/smerge
 
 pushd /tmp
-wget "https://go.dev/dl/$(curl 'https://go.dev/VERSION?m=text' | head -1).darwin-amd64.pkg"
-sudo installer -pkg $(curl 'https://go.dev/VERSION?m=text' | head -1).darwin-amd64.pkg -target /
+wget "https://go.dev/dl/$(curl 'https://go.dev/VERSION?m=text' | head -1).darwin-arm64.pkg"
+sudo installer -pkg $(curl 'https://go.dev/VERSION?m=text' | head -1).darwin-arm64.pkg -target /
 popd
 
 brew cleanup
