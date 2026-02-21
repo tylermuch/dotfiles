@@ -52,6 +52,7 @@ git clone https://github.com/junegunn/fzf.git /usr/local/opt/fzf
 
 # clangd has issues with certain versions of the toolchain.
 # This prevents clangd from breaking and preventing autocomplete in neovim
+mkdir -p ~/Library/Preferences/clangd
 cat >~/Library/Preferences/clangd/config.yaml <<EOL
 CompileFlags:
     Remove: [-mcpu=*]
