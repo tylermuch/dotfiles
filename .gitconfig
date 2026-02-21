@@ -20,7 +20,7 @@
     autoSetupRebase = always
     sort = -committerdate
 [core]
-	excludesfile = /Users/tmuch/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [init]
 	defaultBranch = main

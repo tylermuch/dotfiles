@@ -3,8 +3,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 declare -a FILES_TO_SYMLINK=(
-    '.bash_profile'
-    '.bashrc'
     '.gitconfig'
     '.tmux.conf'
     '.vimrc'
@@ -13,7 +11,6 @@ declare -a FILES_TO_SYMLINK=(
     '.lldbinit'
     '.gitignore_global'
     '.alacritty.toml'
-    '.alacritty.yml'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do

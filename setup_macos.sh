@@ -8,9 +8,6 @@ $DIR/symlink.sh
 echo "Installing homebrew..."
 $DIR/brew.sh
 
-echo "Setting up neovim..."
-$DIR/nvimsetup.sh
-
 echo "Setting up tmux..."
 $DIR/tmuxsetup.sh
 
