@@ -8,9 +8,10 @@ export PATH=$PATH:/usr/libexec
 export PATH=$PATH:/usr/sbin
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/bin/git-fuzzy/bin
-export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:$HOME/Library/Python/3.8/bin
 export PATH=$PATH:$HOME/go/bin
+# Put homebrew binaries at the front of PATH
+export PATH=$(brew --prefix)/bin:$PATH
 
 ################################################
 # Aliases
