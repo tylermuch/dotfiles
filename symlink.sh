@@ -11,6 +11,7 @@ declare -a FILES_TO_SYMLINK=(
     '.lldbinit'
     '.gitignore_global'
     '.alacritty.toml'
+    '.markdownlint-cli2.yaml'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do
