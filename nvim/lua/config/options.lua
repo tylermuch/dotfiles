@@ -1,17 +1,37 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+
+-- tell lazyvim to use fzf instead of the default (telescope)
 vim.g.lazyvim_picker = "fzf"
+-- disable automatic formatting on save
 vim.g.autoformat = false
+-- show absolute line numbers
 vim.opt.relativenumber = false
+-- wrap long lines
 vim.opt.wrap = true
-vim.opt.clipboard = "" -- Do not copy yanks to the system clipboard
+-- show a column at 80 characters as a guide for long lines
+vim.opt.colorcolumn = '80'
+-- yanks stay in vim's registers, not synced to system clipboard
+vim.opt.clipboard = ""
+-- a tab is 4 spaces
 vim.opt.tabstop = 4
+-- >> / << indents by 4 spaces
 vim.opt.shiftwidth = 4
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.hlsearch = true
-vim.opt.backup = false
+-- pressing tab inserts spaces
 vim.opt.expandtab = true
-vim.opt.scrolloff = 10
+-- makes tab at line start use shiftwidth instead of tabstop
 vim.opt.smarttab = true
+-- new lines inherit indentation from the previous line
+vim.opt.autoindent = true
+-- context-aware indentation (e.g. after {)
+vim.opt.smartindent = true
+-- highlight all search matches
+vim.opt.hlsearch = true
+-- disables creating backup files
+vim.opt.backup = false
+-- keep 10 lines of context above/below cursor when scrolling
+vim.opt.scrolloff = 10
+-- infinite undo
+vim.opt.undofile = true
+
