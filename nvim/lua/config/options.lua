@@ -6,12 +6,13 @@
 vim.g.lazyvim_picker = "fzf"
 -- disable automatic formatting on save
 vim.g.autoformat = false
--- show absolute line numbers
-vim.opt.relativenumber = false
+-- show both relative and absolute line numbers
+vim.opt.relativenumber = true
+vim.opt.number = true
 -- wrap long lines
 vim.opt.wrap = true
--- show a column at 80 characters as a guide for long lines
-vim.opt.colorcolumn = '80'
+-- show a column at 120 characters as a guide for long lines
+vim.opt.colorcolumn = '120'
 -- yanks stay in vim's registers, not synced to system clipboard
 vim.opt.clipboard = ""
 -- a tab is 4 spaces
@@ -32,6 +33,3 @@ vim.opt.hlsearch = true
 vim.opt.backup = false
 -- keep 10 lines of context above/below cursor when scrolling
 vim.opt.scrolloff = 10
--- infinite undo
-vim.opt.undofile = true
-
