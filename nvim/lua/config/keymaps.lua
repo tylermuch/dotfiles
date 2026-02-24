@@ -6,3 +6,11 @@ vim.keymap.set("n", "<localleader>;", ":FzfLua files<Enter>")
 vim.keymap.set("n", "<localleader>s", ":FzfLua grep_cword<Enter>")
 vim.keymap.set("n", "<localleader>b", ":FzfLua buffers<Enter>")
 vim.keymap.set("n", "<localleader>y", ":YankyRingHistory<Enter>")
+
+vim.keymap.set({"n", "v"}, "<Up>", function() print("Use k") end)
+vim.keymap.set({"n", "v"}, "<Down>", function() print("Use j") end)
+vim.keymap.set({"n", "v"}, "<Left>", function() print("Use h") end)
+vim.keymap.set({"n", "v"}, "<Right>", function() print("Use l") end)
+
+vim.keymap.set({"n", "v"}, "m", "<PageDown>")
+vim.keymap.set({"n", "v"}, ",", "<PageUp>")
