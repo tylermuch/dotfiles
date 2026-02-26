@@ -9,7 +9,6 @@ declare -a FILES_TO_SYMLINK=(
     '.hushlogin'
     '.lldbinit'
     '.gitignore_global'
-    '.alacritty.toml'
     '.markdownlint-cli2.yaml'
 )
 
@@ -25,3 +24,4 @@ mkdir -p $HOME/.config
 ln -sf $DIR/nvim $HOME/.config/nvim
 ln -sf $DIR/tmux $HOME/.config/tmux
 ln -sf $DIR/tmux/.tmux.conf $HOME/.tmux.conf
+ln -sf $DIR/alacritty $HOME/.config/alacritty
