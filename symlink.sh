@@ -21,7 +21,7 @@ for i in ${FILES_TO_SYMLINK[@]}; do
 done
 
 mkdir -p $HOME/.config
-ln -sf $DIR/nvim $HOME/.config/nvim
-ln -sf $DIR/tmux $HOME/.config/tmux
+ln -sfn $DIR/nvim $HOME/.config/nvim
+ln -sfn $DIR/tmux $HOME/.config/tmux
 ln -sf $DIR/tmux/.tmux.conf $HOME/.tmux.conf
-ln -sf $DIR/alacritty $HOME/.config/alacritty
+ln -sfn $DIR/alacritty $HOME/.config/alacritty
