@@ -4,7 +4,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 declare -a FILES_TO_SYMLINK=(
     '.gitconfig'
-    '.tmux.conf'
     '.vimrc'
     '.zshrc'
     '.hushlogin'
@@ -24,3 +23,5 @@ done
 
 mkdir -p $HOME/.config
 ln -sf $DIR/nvim $HOME/.config/nvim
+ln -sf $DIR/tmux $HOME/.config/tmux
+ln -sf $DIR/tmux/.tmux.conf $HOME/.tmux.conf
