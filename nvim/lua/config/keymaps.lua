@@ -12,5 +12,5 @@ vim.keymap.set({"n", "v"}, "<Down>", function() print("Use j") end)
 vim.keymap.set({"n", "v"}, "<Left>", function() print("Use h") end)
 vim.keymap.set({"n", "v"}, "<Right>", function() print("Use l") end)
 
-vim.keymap.set({"n", "v"}, "m", "<PageDown>")
-vim.keymap.set({"n", "v"}, ",", "<PageUp>")
+vim.keymap.set({"n", "v"}, "m", "10j")
+vim.keymap.set({"n", "v"}, ",", "10k")
