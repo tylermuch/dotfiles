@@ -15,7 +15,7 @@ size = 14.0
 
 [window.dimensions]
 columns = 120
-lines = 24
+lines = 30
 
 [scrolling]
 history = 100_000
