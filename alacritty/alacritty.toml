@@ -3,7 +3,7 @@ size = 14.0
 
   [font.normal]
   family = "RobotoMono Nerd Font Mono"
-  style = "Medium"
+  style = "Regular"
 
   [font.bold]
   family = "RobotoMono Nerd Font Mono"
