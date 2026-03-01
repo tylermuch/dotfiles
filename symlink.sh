@@ -9,7 +9,6 @@ declare -a FILES_TO_SYMLINK=(
     '.hushlogin'
     '.lldbinit'
     '.gitignore_global'
-    '.markdownlint-cli2.yaml'
 )
 
 for i in ${FILES_TO_SYMLINK[@]}; do
