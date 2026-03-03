@@ -24,3 +24,4 @@ ln -sfn $DIR/nvim $HOME/.config/nvim
 ln -sfn $DIR/tmux $HOME/.config/tmux
 ln -sf $DIR/tmux/.tmux.conf $HOME/.tmux.conf
 ln -sfn $DIR/alacritty $HOME/.config/alacritty
+ln -sfn $DIR/ghostty $HOME/.config/ghostty
