@@ -28,3 +28,5 @@ window-padding-y = 8
 adjust-cursor-thickness = 2
 cursor-opacity = 0.8
 window-vsync = true
+
+auto-update = off
