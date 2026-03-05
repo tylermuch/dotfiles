@@ -21,3 +21,10 @@ window-theme = auto
 
 macos-icon = custom
 macos-custom-icon = ~/.config/ghostty/icon_512x512@2x.png
+
+window-padding-x = 10
+window-padding-y = 8
+
+adjust-cursor-thickness = 2
+cursor-opacity = 0.8
+window-vsync = true
