@@ -29,6 +29,7 @@ alias cls="clear; printf '\e[3J'; clear"
 alias vim='nvim'
 alias clearall="printf '\033c'"
 alias bfzf='git checkout $(git branch | fzf)'
+alias rsync='`brew --prefix rsync`/bin/rsync -aphz --info=PROGRESS2'
 
 ################################################
 # Misc.
