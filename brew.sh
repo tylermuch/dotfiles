@@ -27,7 +27,8 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              nodejs                      `# For neovim plugins` \
              pyenv                       `# Multiple python installations` \
              coreutils                   `# GNU coreutils. Mostly for 'timeout'` \
-             pv                          `# Monitor progress of data through a pipe`
+             pv                          `# Monitor progress of data through a pipe` \
+             rsync                       `# Rsync`
 
 mkdir ~/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
