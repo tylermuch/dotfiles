@@ -35,7 +35,9 @@ brew install ssh-copy-id                 `# Copy ssh public key to remote system
              coreutils                   `# GNU coreutils. Mostly for 'timeout'` \
              pv                          `# Monitor progress of data through a pipe` \
              rsync                       `# Rsync` \
-             stow                        `# Symlink farm manager`
+             stow                        `# Symlink farm manager` \
+             font-roboto-mono-nerd-font  `# RobotoMono Nerd Font` \
+             ghostty                     `# Ghostty terminal emulator`
 
 mkdir ~/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $HOME/bin/subl
