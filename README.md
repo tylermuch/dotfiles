@@ -5,7 +5,7 @@ macOS setup for terminal and editor configuration.
 ## Setup
 
 ```sh
-./setup_macos.sh
+./scripts/setup_macos.sh
 ```
 
 This installs Homebrew packages, sets up symlinks, configures tmux, sets zsh as the default shell, and installs Rust/Cargo tools.
