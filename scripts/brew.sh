@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ $(command -v brew) == "" ]]; then
-    echo "Downloading and installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-    if [[ $(uname -m) == "arm64" ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-        eval "$(/usr/local/bin/brew shellenv)"
-    fi
-fi
-
 brew install ssh-copy-id                 `# Copy ssh public key to remote system` \
              git                         `# Git` \
              tig                         `# Terminal based git browser` \

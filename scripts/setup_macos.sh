@@ -3,6 +3,16 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Installing homebrew..."
+$DIR/install_homebrew.sh
+
+# Load homebrew environment
+if [[ $(uname -m) == "arm64" ]] && [ -f /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+echo "Installing packages..."
 $DIR/brew.sh
 
 echo "Symlinking dotfiles..."
