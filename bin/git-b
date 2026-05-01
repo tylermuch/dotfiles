@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""
+git-b: Show branches sorted by recent commit, with ahead/behind counts.
+
+Usage: git b [refbranch] [count]
+  refbranch  Base branch for ahead/behind comparison (default: origin/main)
+  count      Max branches to show (default: 20)
+
+Placed on $PATH, git discovers this as "git b" automatically.
+"""
+
+import re
+import subprocess
+import sys
+
+# ========================================================================
+# ANSI Color Helpers
+# ========================================================================
+
+ANSI_ESCAPE = re.compile(r"\x1b\[[0-9;]*m")
+
+RESET = "\033[0m"
+YELLOW = "\033[33m"
+BOLD_GREEN = "\033[1;32m"
+BLUE = "\033[34m"
+MAGENTA = "\033[35m"
+# Dim white for the header row to keep it visually distinct from data.
+DIM = "\033[2m"
+
+
+def visible_len(s: str) -> int:
+    """Length of string ignoring ANSI escape sequences."""
+    return len(ANSI_ESCAPE.sub("", s))
+
+
+def pad(s: str, width: int) -> str:
+    """Right-pad a string to `width` visible characters, ANSI-aware."""
+    return s + " " * max(0, width - visible_len(s))
+
+
+# ========================================================================
+# Git Helpers
+# ========================================================================
+
+
+def git(*args: str) -> str:
+    result = subprocess.run(
+        ["git", *args], capture_output=True, text=True
+    )
+    return result.stdout.strip()
+
+
+def ahead_behind(branch: str, ref: str) -> tuple[int, int]:
+    """Return (ahead, behind) counts for branch vs ref."""
+    out = git("rev-list", "--left-right", "--count", f"{ref}...{branch}")
+    if not out:
+        return 0, 0
+    behind_str, ahead_str = out.split()
+    return int(ahead_str), int(behind_str)
+
+
+# ========================================================================
+# Main
+# ========================================================================
+
+
+def main() -> None:
+    ref = sys.argv[1] if len(sys.argv) > 1 else "origin/main"
+    count = int(sys.argv[2]) if len(sys.argv) > 2 else 20
+
+    # Fetch branch metadata in one shot. Fields are pipe-delimited:
+    #   refname:short | HEAD | committerdate:relative | subject | authorname
+    fmt = "%(refname:short)|%(HEAD)|%(committerdate:relative)|%(subject)|%(authorname)"
+    raw = git(
+        "for-each-ref",
+        "--sort=-committerdate",
+        f"--count={count}",
+        "--format=" + fmt,
+        "refs/heads",
+    )
+    if not raw:
+        return
+
+    # Build rows: each row is a list of already-colorized cell strings.
+    header = [DIM + h + RESET for h in ["ahead", "behind", "branch", "last commit", "message", "author"]]
+    rows = [header]
+
+    for line in raw.splitlines():
+        name, head_marker, date, subject, author = line.split("|", 4)
+
+        # Truncate long commit messages.
+        if len(subject) > 70:
+            subject = subject[:67] + "..."
+
+        a, b = ahead_behind(name, ref)
+
+        # Mark the current branch with an asterisk.
+        branch_display = f"*{name}" if head_marker.strip() == "*" else name
+
+        rows.append([
+            str(a),
+            str(b),
+            YELLOW + branch_display + RESET,
+            BOLD_GREEN + date + RESET,
+            BLUE + subject + RESET,
+            MAGENTA + author + RESET,
+        ])
+
+    # Compute column widths from the visible text (ignoring ANSI codes).
+    num_cols = len(rows[0])
+    col_widths = [0] * num_cols
+    for row in rows:
+        for i, cell in enumerate(row):
+            col_widths[i] = max(col_widths[i], visible_len(cell))
+
+    # Print each row with columns padded to their max visible width.
+    # Two-space gap between columns keeps things readable without clutter.
+    for row in rows:
+        print("  ".join(pad(cell, col_widths[i]) for i, cell in enumerate(row)))
+
+
+if __name__ == "__main__":
+    main()

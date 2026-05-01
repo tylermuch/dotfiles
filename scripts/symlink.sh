@@ -26,3 +26,6 @@ for pkg in "${PACKAGES[@]}"; do
     # -v: verbose, -R: recursive, -t ~: target home directory
     stow -v -R "$pkg" -t "$HOME"
 done
+
+mkdir -p $HOME/bin
+ln -sf $DIR/bin/git-b $HOME/bin/git-b
