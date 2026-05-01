@@ -5,3 +5,7 @@ tags.temp
 cscope.out
 .cache
 compile_commands.json
+SESSION.md
+tmp
+.claude
+.clangd
