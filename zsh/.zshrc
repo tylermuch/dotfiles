@@ -140,6 +140,9 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# vim bindings!
+bindkey -v
+
 # Enable menu-driven completion
 zstyle ':completion:*' menu select
 
