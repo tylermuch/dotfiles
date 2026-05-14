@@ -19,6 +19,8 @@ window-width = 90
 
 window-theme = auto
 
+window-colorspace = display-p3
+
 macos-icon = custom
 macos-custom-icon = ~/.config/ghostty/icon_512x512@2x.png
 
