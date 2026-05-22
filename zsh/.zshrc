@@ -30,6 +30,9 @@ alias vim='nvim'
 alias clearall="printf '\033c'"
 alias bfzf='git checkout $(git branch | fzf)'
 alias rsync='`brew --prefix rsync`/bin/rsync -aphz --info=PROGRESS2'
+rmprog() {
+    rm -rvf "$1" | pv -l -t -e -p -s $(fd -HI . "$1" | wc -l) > /dev/null
+}
 
 ################################################
 # Misc.
