@@ -32,3 +32,5 @@ cursor-opacity = 0.8
 window-vsync = true
 
 auto-update = off
+
+macos-option-as-alt = true
