@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Outputs tmux format strings for the status bar keybind display.
+# Update this file whenever keybindings in .tmux.conf change.
+
+SEP=$(printf '\xEE\x82\xB8')  # U+E0B8: lower-left triangle (matches status-left style)
+
+K="#[fg=#c4b28a,bold]"
+MK="#[fg=#c4b28a,bold]"
+L="#[fg=#625e5a]"
+R="#[fg=#c4b28a,bg=#181616,nobold]"
+PAD="  "
+# Both sides use U+E0B8; entry inverts fg/bg relative to exit
+HOPEN="#[fg=#181616,bg=#c4b28a,nobold]${SEP}#[fg=#181616,bg=#c4b28a,bold]"
+HEND="#[fg=#c4b28a,bg=#181616,nobold]${SEP}"
+MOPEN="#[fg=#181616,bg=#87a987,nobold]${SEP}#[fg=#181616,bg=#87a987,bold]"
+MEND="#[fg=#87a987,bg=#181616,nobold]${SEP}"
+
+case "$1" in
+    --mode-status)
+        case "$2" in
+            idle)
+                echo "${HOPEN} Ctrl+ ${HEND}  ${K}<p>${R} ${L}PANE${R}  ${K}<t>${R} ${L}TAB${R}  ${K}<n>${R} ${L}NEXT${R}  ${K}<x>${R} ${L}RESIZE${R}  ${K}<s>${R} ${L}SEARCH${R}  ${K}<o>${R} ${L}SESSION${R}  ${K}<q>${R} ${L}QUIT${PAD}"
+                ;;
+            pane)
+                echo "${MOPEN} PANE ${MEND}  ${MK}<n>${R} ${L}Split→${R}  ${MK}<d>${R} ${L}Split↓${R}  ${MK}<x>${R} ${L}Close${R}  ${MK}<f>${R} ${L}Full${R}  ${MK}<hjkl>${R} ${L}Move${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
+                ;;
+            tab)
+                echo "${MOPEN} TAB ${MEND}  ${MK}<n>${R} ${L}New${R}  ${MK}<x>${R} ${L}Close${R}  ${MK}<r>${R} ${L}Rename${R}  ${MK}<h/l>${R} ${L}←/→${R}  ${MK}<1-9>${R} ${L}Select${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
+                ;;
+            resize)
+                echo "${MOPEN} RESIZE ${MEND}  ${MK}<hjkl>${R} ${L}←↓↑→${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
+                ;;
+            session)
+                echo "${MOPEN} SESSION ${MEND}  ${MK}<d>${R} ${L}Detach${R}  ${MK}<w>${R} ${L}Tree${R}  ${MK}<r>${R} ${L}Rename${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
+                ;;
+            *)
+                echo "Unknown mode: $2" >&2; exit 1
+                ;;
+        esac
+        ;;
+    *)
+        echo "Usage: tmux-shortcut-helper --mode-status <idle|pane|tab|resize|session>" >&2
+        exit 1
+        ;;
+esac

@@ -28,4 +28,5 @@ for pkg in "${PACKAGES[@]}"; do
 done
 
 mkdir -p $HOME/bin
-ln -sf $DIR/bin/git-b $HOME/bin/git-b
+ln -sf $DOTFILES_ROOT/bin/git-b $HOME/bin/git-b
+ln -sf $DOTFILES_ROOT/bin/tmux-shortcut-helper $HOME/bin/tmux-shortcut-helper
