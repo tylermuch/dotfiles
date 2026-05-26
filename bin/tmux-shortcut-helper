@@ -2,14 +2,14 @@
 # Outputs tmux format strings for the status bar keybind display.
 # Update this file whenever keybindings in .tmux.conf change.
 
-SEP=$(printf '\xEE\x82\xB8')  # U+E0B8: lower-left triangle (matches status-left style)
+SEP=$(printf '\xEE\x82\xBC')  # U+E0BC: lower-right triangle (mirrored slant)
 
 K="#[fg=#c4b28a,bold]"
 MK="#[fg=#c4b28a,bold]"
 L="#[fg=#625e5a]"
 R="#[fg=#c4b28a,bg=#181616,nobold]"
 PAD="  "
-# Both sides use U+E0B8; entry inverts fg/bg relative to exit
+# Both sides use U+E0BC; entry inverts fg/bg relative to exit
 HOPEN="#[fg=#181616,bg=#c4b28a,nobold]${SEP}#[fg=#181616,bg=#c4b28a,bold]"
 HEND="#[fg=#c4b28a,bg=#181616,nobold]${SEP}"
 MOPEN="#[fg=#181616,bg=#87a987,nobold]${SEP}#[fg=#181616,bg=#87a987,bold]"
