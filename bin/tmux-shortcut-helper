@@ -19,7 +19,7 @@ case "$1" in
     --mode-status)
         case "$2" in
             idle)
-                echo "${HOPEN} Ctrl+ ${HEND}  ${K}<p>${R} ${L}PANE${R}  ${K}<t>${R} ${L}TAB${R}  ${K}<n>${R} ${L}NEXT${R}  ${K}<x>${R} ${L}RESIZE${R}  ${K}<s>${R} ${L}SEARCH${R}  ${K}<o>${R} ${L}SESSION${R}  ${K}<q>${R} ${L}QUIT${PAD}"
+                echo "${HOPEN} Ctrl+ ${HEND}  ${K}<p>${R} ${L}PANE${R}  ${K}<e>${R} ${L}TAB${R}  ${K}<n>${R} ${L}NEXT${R}  ${K}<x>${R} ${L}RESIZE${R}  ${K}<s>${R} ${L}SESSION${R}${PAD}"
                 ;;
             pane)
                 echo "${MOPEN} PANE ${MEND}  ${MK}<n>${R} ${L}Split→${R}  ${MK}<d>${R} ${L}Split↓${R}  ${MK}<x>${R} ${L}Close${R}  ${MK}<f>${R} ${L}Full${R}  ${MK}<hjkl>${R} ${L}Move${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
