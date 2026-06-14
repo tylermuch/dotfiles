@@ -22,7 +22,7 @@ case "$1" in
                 echo "${HOPEN} Ctrl+ ${HEND}  ${K}<p>${R} ${L}PANE${R}  ${K}<e>${R} ${L}TAB${R}  ${K}<n>${R} ${L}NEXT${R}  ${K}<x>${R} ${L}RESIZE${R}  ${K}<s>${R} ${L}SESSION${R}${PAD}"
                 ;;
             pane)
-                echo "${MOPEN} PANE ${MEND}  ${MK}<n>${R} ${L}Split→${R}  ${MK}<d>${R} ${L}Split↓${R}  ${MK}<x>${R} ${L}Close${R}  ${MK}<f>${R} ${L}Full${R}  ${MK}<hjkl>${R} ${L}Move${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
+                echo "${MOPEN} PANE ${MEND}  ${MK}<n>${R} ${L}Split→${R}  ${MK}<d>${R} ${L}Split↓${R}  ${MK}<x>${R} ${L}Close${R}  ${MK}<f>${R} ${L}Full${R}  ${MK}<b>${R} ${L}Break${R}  ${MK}<J>${R} ${L}Join${R}  ${MK}<hjkl>${R} ${L}Move${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
                 ;;
             tab)
                 echo "${MOPEN} TAB ${MEND}  ${MK}<n>${R} ${L}New${R}  ${MK}<x>${R} ${L}Close${R}  ${MK}<r>${R} ${L}Rename${R}  ${MK}<h/l>${R} ${L}←/→${R}  ${MK}<1-9>${R} ${L}Select${R}  ${MK}<Esc>${R} ${L}Back${PAD}"
