@@ -19,6 +19,27 @@ return {
   opts = {
     inlay_hints = { enabled = false },
     autoformat  = false,
+    servers = {
+      -- Keep lua_ls from indexing/diagnosing every .lua file in huge workspaces.
+      -- TODO: revisit limits if cross-file hover/completion feels too stingy.
+      lua_ls = {
+        settings = {
+          Lua = {
+            workspace = {
+              checkThirdParty = false,
+              maxPreload      = 200,  -- default 5000
+              preloadFileSize = 100,  -- KB, default 500
+              ignoreDir       = { "build", "out", "node_modules", ".git", "third_party" },
+            },
+            diagnostics = {
+              -- Only diagnose open files, never the whole workspace
+              workspaceDelay = -1,
+              workspaceEvent = "None",
+            },
+          },
+        },
+      },
+    },
     setup = {
       clangd = function (_, opts)
       opts.cmd = { clangd_path, "--header-insertion=never"}
