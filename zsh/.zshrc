@@ -31,7 +31,32 @@ alias clearall="printf '\033c'"
 alias bfzf='git checkout $(git branch | fzf)'
 alias rsync='`brew --prefix rsync`/bin/rsync -aphz --info=PROGRESS2'
 rmprog() {
-    rm -rvf "$1" | pv -l -t -e -p -s $(fd -HI . "$1" | wc -l) > /dev/null
+    local total=$(fd -HI . "$@" | wc -l)
+    rm -rvf "$@" | pv -l -t -e -p -s "$total" > /dev/null
+}
+
+# bear 4.2.2 doesn't intercept compiler execs invoked by absolute path (e.g. via
+# xcrun toolchains), so it produces an empty compile_commands.json for those builds.
+# Work around it by parsing a `make -n` dry-run instead of relying on exec interception.
+bear() {
+    if [[ "$1" == "--" && "$*" == *xcrun* ]]; then
+        shift
+        local dryrun
+        dryrun=$(mktemp)
+        "$@" -n >| "$dryrun" 2>&1
+        "$@"
+        local rc=$?
+        if (( rc != 0 )); then
+            rm -f "$dryrun"
+            return $rc
+        fi
+        local extra=()
+        [[ -f compile_commands.json ]] && extra=(--append)
+        command bear parse-sh -i "$dryrun" -o compile_commands.json "${extra[@]}" -C "$PWD" 2>/dev/null
+        rm -f "$dryrun"
+    else
+        command bear "$@"
+    fi
 }
 
 ################################################
